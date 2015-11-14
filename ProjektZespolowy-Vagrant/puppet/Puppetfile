@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+forge 'https://forgeapi.puppetlabs.com'
+
+mod 'maestrodev/maven'
+mod 'aco/oracle_java'
+mod 'puppetlabs/apt'
+mod 'puppetlabs-postgresql'
