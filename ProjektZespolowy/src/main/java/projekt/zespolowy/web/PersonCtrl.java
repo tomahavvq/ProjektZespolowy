@@ -20,7 +20,13 @@ public class PersonCtrl {
     private PersonService personService;
 
     @RequestMapping(value = "{personId}[0-9]*$", method = RequestMethod.GET)
-    public ResponseEntity getPerson(@PathVariable Long personId {
-        
+    public ResponseEntity getPerson(@PathVariable Long personId) {
+        Person person = personService.getPerson(personId);
+
+        if (person == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+
+        return ResponseEntity.ok(person);
     }
 }
