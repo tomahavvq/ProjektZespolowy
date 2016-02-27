@@ -2,3 +2,9 @@
 .idea
 cache
 .vagrant
+target
+bower_components
+node_modules
+.classpath
+.project
+.settings

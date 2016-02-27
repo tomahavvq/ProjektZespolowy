@@ -4,8 +4,8 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>pojekty.zespolowy</groupId>
-	<artifactId>advancedBoot</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<artifactId>projZesp</artifactId>
+	<version>0.0.1</version>
 	<packaging>jar</packaging>
 
 	<name>projekzespolowy</name>
@@ -20,7 +20,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
-        <postgresql.version>9.4-1201-jdbc41</postgresql.version>
+        <mysql.version>5.1.38</mysql.version>
         <h2.version>1.4.187</h2.version>
         <liquibase-core.version>3.4.1</liquibase-core.version>
         <liquibase-slf4j.version>1.2.1</liquibase-slf4j.version>
@@ -64,6 +64,12 @@
             <groupId>com.mysema.querydsl</groupId>
             <artifactId>querydsl-jpa</artifactId>
             <version>${querydsl.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.version}</version>
         </dependency>
 
         <dependency>

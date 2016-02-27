@@ -13,7 +13,7 @@ file { '/etc/profile.d/append-gradle-path.sh':
 }
 
 class { 'oracle_java':
-  version => '8u51',
+  version => '8u45',
   type    => 'jdk'
 }
 
@@ -26,14 +26,14 @@ class { "maven::maven":
   version => "3.3.3",
 }
 
-class { 'postgresql::server':
-  ip_mask_deny_postgres_user => '0.0.0.0/32',
-  ip_mask_allow_all_users    => '0.0.0.0/0',
-  listen_addresses           => '*',
-  postgres_password          => 'pg',
+class { 'mysql::server':
+  root_password => 'admin',
 }
 
-postgresql::server::db { 'pg':
-  user     => 'pg',
-  password => postgresql_password('pg', 'pg'),
+mysql::db { 'projektzespolowy':
+  user     => 'admin',
+  password => 'admin',
+  host	   => 'localhost',
+  grant	   => ['ALL'],
 }
+

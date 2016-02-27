@@ -1,16 +1,15 @@
 package projekt.zespolowy.web;
 
-import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 import projekt.zespolowy.domain.Person;
-import projekt.zespolowy.dao.repository.PersonRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import projekt.zespolowy.service.PersonService;
 
 import javax.inject.Inject;
-import java.util.List;
 
 @RestController
 @RequestMapping("api/person")
