@@ -1,7 +1,7 @@
 ## Install required plugins if not already installed
 
 required_plugins = %w(
-  vagrant-hostmanager
+
   vagrant-librarian-puppet
 )
 plugins_to_install = required_plugins.select { |plugin| not Vagrant.has_plugin? plugin }
@@ -21,23 +21,20 @@ Dir.mkdir("./puppet/modules") unless Dir.exists?("./puppet/modules")
 ## Vagrant configuration
 
 Vagrant.configure(2) do |config|
-  config.hostmanager.manage_host = true
-  config.hostmanager.ignore_private_ip = false
-  config.hostmanager.include_offline = true
   config.vm.box = 'ubuntu/trusty64'
   config.vm.hostname = 'projektzespolowy.box'
-  config.vm.network :private_network, ip: '10.0.0.10'
-  config.vm.network :forwarded_port, guest:3306, host:3306
+  config.vm.network "private_network", ip: '10.0.0.10'
+	config.vm.network :forwarded_port, guest: 3306, host: 3309
   config.vm.synced_folder ".", "/vagrant", disabled: true
-  config.vm.synced_folder "./../ProjektZespolowy", "/home/vagrant/ProjektZespolowy"
-  config.vm.synced_folder "~/.m2/", "/home/vagrant/.m2"
+  config.vm.synced_folder "./..", "/home/vagrant/ProjektZespolowy"
   config.vm.provider :virtualbox do |vb|
     vb.memory = 1024
     vb.cpus = 2
     vb.name = "ProjektZespolowyDev"
   end
   config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
-  config.vm.provision 'shell', :inline => <<-SHELL
+	config.vm.provision :shell, :path => "db.sh"  
+	config.vm.provision 'shell', :inline => <<-SHELL
     apt-get update
     apt-get install -y puppet
   SHELL
