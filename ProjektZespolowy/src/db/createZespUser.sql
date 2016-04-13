@@ -1,0 +1,7 @@
+SET NAMES utf8
+COLLATE utf8_polish_ci;
+CREATE USER 'zesp'@'%'
+  IDENTIFIED BY 'zesp';
+GRANT ALL PRIVILEGES ON zesp.* TO 'zesp'@'%';
+FLUSH PRIVILEGES;
+COMMIT;
