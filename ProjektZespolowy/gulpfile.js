@@ -101,7 +101,7 @@ gulp.task('styles', function () {
 gulp.task('templates', function () {
     return gulp.src([config.app + 'scripts/**/*.html'])
         .pipe(angularTemplatecache({
-            module: 'cruApp',
+            module: 'projZesp',
             root: 'scripts'
         }))
         .pipe(gulp.dest(config.work));
