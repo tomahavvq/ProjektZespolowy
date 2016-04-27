@@ -42,8 +42,8 @@ gulp.task('clean', function () {
 });
 
 gulp.task('copy', function () {
-    return gulp.src(config.app + 'i18n/**')
-        .pipe(gulp.dest(config.dist + 'i18n/'));
+    return gulp.src(config.app + '/img/**')
+        .pipe(gulp.dest(config.dist + '/img/'));
 });
 
 gulp.task('copy-fonts', function () {
