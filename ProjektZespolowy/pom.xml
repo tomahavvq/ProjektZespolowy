@@ -22,8 +22,8 @@
         <java.version>1.8</java.version>
         <mysql.version>5.1.38</mysql.version>
         <h2.version>1.4.187</h2.version>
-        <liquibase-core.version>3.4.1</liquibase-core.version>
-        <liquibase-slf4j.version>1.2.1</liquibase-slf4j.version>
+        <!--<liquibase-core.version>3.4.1</liquibase-core.version>-->
+        <!--<liquibase-slf4j.version>1.2.1</liquibase-slf4j.version>-->
         <querydsl.version>3.6.7</querydsl.version>
     </properties>
 
@@ -40,18 +40,18 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.liquibase</groupId>
-            <artifactId>liquibase-core</artifactId>
-            <version>${liquibase-core.version}</version>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.mattbertolini</groupId>
-            <artifactId>liquibase-slf4j</artifactId>
-            <version>${liquibase-slf4j.version}</version>
-            <scope>runtime</scope>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.liquibase</groupId>-->
+            <!--<artifactId>liquibase-core</artifactId>-->
+            <!--<version>${liquibase-core.version}</version>-->
+            <!--<scope>runtime</scope>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>com.mattbertolini</groupId>-->
+            <!--<artifactId>liquibase-slf4j</artifactId>-->
+            <!--<version>${liquibase-slf4j.version}</version>-->
+            <!--<scope>runtime</scope>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
@@ -111,6 +111,20 @@
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.liquibase</groupId>
+                <artifactId>liquibase-maven-plugin</artifactId>
+                <version>3.5.0</version>
+                <configuration>
+                    <changeLogFile>src/db/changelog/db.changelog-master.xml</changeLogFile>
+                    <driver>com.mysql.jdbc.Driver</driver>
+                    <url>${zesp.db.url}</url>
+                    <username>${zesp.db.user}</username>
+                    <password>${zesp.db.password}</password>
+                    <verbose>false</verbose>
+                    <logging>info</logging>
+                </configuration>
             </plugin>
         </plugins>
     </build>
