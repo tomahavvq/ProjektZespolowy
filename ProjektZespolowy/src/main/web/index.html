@@ -1,9 +1,8 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html ng-app="maxwellSport">
 <head>
-    <meta charset="utf-8">
-    <title>Maxwell Sport</title>
-
+    <meta charset="UTF-8"/>
+    <link rel="icon" href="images/favicon.ico"/>
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
     <!-- endbower -->
@@ -13,20 +12,25 @@
     <!-- inject:css -->
     <!-- endinject -->
     <!-- endbuild -->
+    <title>Maxwell Sport</title>
 </head>
 <body>
 <div class="container-fluid">
     <div class="row">
-        <div class="masthead">
-            <div class="masthead-container clearfix">
-                <h3 class="masthead-brand">Cover</h3>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 masthead">
+            <div class="clearfix masthead-wrapper">
+                <div class="masthead-brand">
+                    <img alt="Maxwell Image" src="images/maxwell.png"/>
+                    <h3>Maxwell Sport</h3>
+                </div>
+
                 <nav>
                     <ul class="nav masthead-nav">
-                        <li class="active"><a href="#">Section 1</a></li>
-                        <li><a href="#">Section 2</a></li>
-                        <li><a href="#">Section 3</a></li>
-                        <li><a href="#">Section 4</a></li>
-                        <li><a href="#">Section 5</a></li>
+                        <li class="active scroll"><a>Section 1</a></li>
+                        <li class="scroll"><a>Section 2</a></li>
+                        <li class="scroll"><a>Section 3</a></li>
+                        <li class="scroll"><a>Section 4</a></li>
+                        <li><a>Log In</a></li>
                     </ul>
                 </nav>
             </div>
@@ -34,31 +38,69 @@
     </div>
 
     <div class="row">
-        <div class="content-box fixed-img background-img-1">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 background-img background-img-1">
+            <div class="content-wrapper black-surface">
+                <div class="content title-box">
+                    <h3>Born To Perform</h3>
+                    <h1>Maxwell Sport</h1>
+                </div>
+            </div>
+
         </div>
     </div>
 
     <div class="row">
-        <div class="content-box content">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 background-color">
+            <div class="container-fluid content-wrapper">
+                <div class="row content section2">
+                    <div class="col-lg-12"><h1>We offer</h1></div>
+                    <div class="col-lg-4">
+                        <div class="tile">
+                            <img src="images/tile01.jpg"/>
+                            <h3>Professional Trainers</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="tile">
+                            <img src="images/tile02.jpg"/>
+                            <h3>Individual Approach</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="tile">
+                            <img src="images/tile03.jpg"/>
+                            <h3>Best Results</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
     <div class="row">
-        <div class="content-box fixed-img background-img-2">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 background-img background-img-2">
+            <div class="content-wrapper black-surface">
+
+            </div>
         </div>
     </div>
 
     <div class="row">
-        <div class="content-box content">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 background-color">
+            <div class="content-wrapper">
+
+            </div>
         </div>
     </div>
 
     <div class="row">
-        <div class="content-box fixed-img background-img-3">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 background-img background-img-3">
+            <div class="content-wrapper black-surface">
+
+            </div>
         </div>
     </div>
 </div>
-
 <!-- build:js scripts/vendor.js -->
 <!-- bower:js -->
 <!-- endbower -->
@@ -70,6 +112,5 @@
 <!-- inject:partials -->
 <!-- endinject -->
 <!-- endbuild -->
-
 </body>
 </html>

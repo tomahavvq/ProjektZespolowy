@@ -1,70 +1,66 @@
+/* --- GLOBAL STYLING --- */
 /*
- * Globals
+ * Base structure
  */
+body {
+    font-family: "Ubuntu Light", sans-serif;
+    color: #fff;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, .5);
+}
 
-/* Links */
+/*
+ * Links
+ */
 a,
 a:focus,
 a:hover {
     color: #fff;
+    text-decoration: none;
+    cursor: pointer;
 }
 
-/*
- * Base structure
- */
-
-html,
-body {
-    height: 100%;
-    background-color: #333;
-}
-
-body {
-    color: #fff;
-    padding-top: 60px;
-    text-align: center;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, .5);
-}
-
-/* Extra markup and styles for table-esque vertical and horizontal centering */
-.site-wrapper {
-    display: table;
-    width: 100%;
-    height: 100%; /* For at least Firefox */
-    min-height: 100%;
-    -webkit-box-shadow: inset 0 0 100px rgba(0, 0, 0, .5);
-    box-shadow: inset 0 0 100px rgba(0, 0, 0, .5);
-}
-
-.site-wrapper-inner {
-    display: table-cell;
-    vertical-align: top;
-}
+/* --- PAGE STYLE --- */
 
 /*
  * Header
  */
 .masthead {
-    background-color: #333;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 1000;
     position: fixed;
     top: 0;
-    width: 100%;
-    box-shadow: 0 0 5px 2px #111;
+    box-shadow: 0 0 5px 1px #000;
 }
 
-.masthead-container {
-    max-width: 900px;
-    margin: 7px auto;
-    padding: 0 10px;
+.masthead-wrapper {
+    max-width: 800px;
+    margin: 5px auto;
 }
 
+/* Logo */
 .masthead-brand {
-    margin: 10px 0;
     float: left;
+    width: 230px;
 }
 
+.masthead-brand img {
+    border-radius: 50%;
+    float: left;
+    width: 50px;
+    height: 50px;
+}
+
+.masthead-brand h3 {
+    float: left;
+    text-align: center;
+    line-height: 50px;
+    margin: 0 10px;
+}
+
+/* Tabs */
 .masthead-nav {
     float: right;
+    margin: 8px 0;
 }
 
 .masthead-nav > li {
@@ -76,11 +72,9 @@ body {
 }
 
 .masthead-nav > li > a {
-    padding-right: 0;
-    padding-left: 0;
+    padding: 5px 0;
     font-size: 16px;
     font-weight: bold;
-    color: #fff; /* IE8 proofing */
     color: rgba(255, 255, 255, .75);
     border-bottom: 2px solid transparent;
 }
@@ -98,27 +92,123 @@ body {
     border-bottom-color: #fff;
 }
 
-.content-box {
-    height: 400px;
+/* CONTENT OF PAGE */
+/*
+ * Background
+ */
+.background-color,
+.background-img {
+    height: 500px;
 }
 
-.fixed-img {
+.background-color {
+    background-color: #fff;
+    box-shadow: 0 0 5px 1px #444;
+    z-index: 10;
+}
+
+.background-img {
     background-attachment: fixed;
     background-size: cover;
 }
 
 .background-img-1 {
-    background-image: url("../img/background-img-1.jpg");
+    background-image: url("../images/background-img-1.jpg");
 }
 
 .background-img-2 {
-    background-image: url("../img/background-img-2.jpg");
+    background-image: url("../images/background-img-2.jpg");
 }
 
 .background-img-3 {
-    background-image: url("../img/background-img-3.jpg");
+    background-image: url("../images/background-img-3.jpg");
 }
 
+.content-wrapper {
+    margin: 0 -15px;
+    min-height: 500px;
+}
+
+.black-surface {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/*
+ * Content Default
+ */
 .content {
-    background-color: #333;
+    padding: 100px;
+}
+
+.content h1,
+.content h2,
+.content h3 {
+    margin: 0;
+    text-align: center;
+}
+
+/*
+ * First box
+ */
+.title-box h1 {
+    display: inline-block;
+    opacity: 0;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-left: 35%;
+    text-align: right;
+    font-weight: bold;
+    font-size: 90px;
+    color: #fff;
+    padding: 0 30px;
+}
+
+.title-box h3 {
+    display: inline-block;
+    position: relative;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: left;
+    margin: 10% 20% 1% 15%;
+    font-weight: bold;
+    font-size: 50px;
+    color: #3399FF;
+    padding: 0 30px;
+}
+
+/*
+ * Second box
+ */
+.section2 {
+    color: #444;
+    min-height: 360px;
+}
+
+.section2 h1 {
+    margin-top: -90px;
+    padding: 20px;
+}
+
+.section2 .tile {
+    margin: 0 auto;
+    width: 300px;
+    height: 360px;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+}
+.section2 .tile:hover {
+    box-shadow: 0 0 5px 1px #888;
+}
+
+.section2 .tile img {
+    display: block;
+    width: 100%;
+}
+
+.section2 .tile h3 {
+    line-height: 60px;
+    text-align: center;
+    width: 100%;
 }
