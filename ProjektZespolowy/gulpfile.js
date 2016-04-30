@@ -42,8 +42,8 @@ gulp.task('clean', function () {
 });
 
 gulp.task('copy', function () {
-    return gulp.src(config.app + '/img/**')
-        .pipe(gulp.dest(config.dist + '/img/'));
+    return gulp.src(config.app + '/images/**')
+        .pipe(gulp.dest(config.dist + '/images/'));
 });
 
 gulp.task('copy-fonts', function () {
