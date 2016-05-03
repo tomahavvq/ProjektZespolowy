@@ -5,7 +5,20 @@
 body {
     font-family: "Ubuntu Light", sans-serif;
     color: #fff;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, .5);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.section2 h1,
+.section3 h1,
+.section4 h1,
+.section5 h1 {
+    font-size: 35px;
+    height: 60px;
+    line-height: 60px;
+}
+
+.animated {
+    opacity: 0;
 }
 
 /*
@@ -19,17 +32,13 @@ a:hover {
     cursor: pointer;
 }
 
-.animated {
-    opacity: 0;
-}
-
 /* --- PAGE STYLE --- */
 
 /*
  * Header
  */
 .masthead {
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: rgba(0, 0, 0, 0.75);
     z-index: 1000;
     position: fixed;
     top: 0;
@@ -223,14 +232,6 @@ a:hover {
     display: block;
     margin: auto;
     width: 90%;
-    -webkit-transition: all 0.5s ease-out;
-    -moz-transition: all 0.5s ease-out;
-    -o-transition: all 0.5s ease-out;
-    transition: all 0.5s ease-out;
-}
-
-.section3 .tile img:hover {
-    width: 94%;
 }
 
 .section3 .tile h3 {
@@ -243,9 +244,13 @@ a:hover {
  * Fourth box
  */
 .section4 {
+    overflow: hidden;
     color: #444;
     padding: 50px 250px;
-    overflow: hidden;
+}
+
+.section4 h1 {
+    margin: -20px 0 20px 0;
 }
 
 .comment {
@@ -272,68 +277,57 @@ a:hover {
 .inverted-comment p {
     text-align: right;
 }
+
 /*
  * Fifth box
  */
+.section5 {
+    padding: 50px 100px;
+    overflow: hidden;
+}
+
 .section5 h1 {
-    float: left;
-    display:inline-block;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 10px 20px;
-    margin: 20px 0;
-    color: #00ff74;
-    font-weight: bold;
-    position: relative;
-    left: 100px;
+    margin: -30px 0 30px 0;
 }
 
-.section5 h3 {
-    display:inline-block;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 10px 20px;
-    margin: 10px 0;
-    color: #00ffff;
-    font-weight: bold;
-    position: relative;
-    width: 500px;
+.joinininfo {
+    margin: 20px auto;
+    width: 90%;
 }
 
-.section5 h3:nth-child(2) {
-    right: 150px;
-    clear: both;
-    float: right;
+.joinininfo p {
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 20px;
 }
-.section5 h3:nth-child(3) {
-    left: 150px;
-    clear: both;
-    float: left;
-}
-.section5 h3:nth-child(4) {
-    right: 150px;
-    clear: both;
-    float: right;
-    margin-bottom: 90px;
-}
-.section5 button {
-    border-radius: 8px;
-    clear: both;
-    width: 200px;
+
+.joinininfo button {
+    border-radius: 4px;
+    width: 150px;
+    height: 50px;
     display: block;
-    margin: auto;
-    background-color: rgba(0,255,116,0.6);
+    margin: 60px auto 60px auto;
+    background-color: #008fff;
     border: none;
-    height: 70px;
     font-weight: bold;
     font-size: 20px;
-    -webkit-transition: all 0.5s ease-out;
-    -moz-transition: all 0.5s ease-out;
-    -o-transition: all 0.5s ease-out;
-    transition: all 0.5s ease-out;
 }
-.section5 button:hover {
-    width: 220px;
-    background-color: rgba(0,255,116,0.9);
+
+.wewantyou {
+    margin: auto;
+    width: 300px;
 }
+
+.wewantyou img {
+    width: 100%;
+    border-radius: 50%;
+    position: relative;
+}
+
+.wewantyou h3 {
+    margin-top: 20px;
+}
+
 /*
  * Footer
  */
@@ -341,18 +335,186 @@ a:hover {
     background-color: #222;
     box-shadow: 0 0 5px 1px #000;
     z-index: 10;
+    padding-bottom: 20px;
 }
+
 .footer-wrapper {
-    min-height: 50px;
+    min-height: 100px;
+}
+.footer-wrapper h2 {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 25px;
+}
+.footer-wrapper h3 {
+    border-bottom: 1px solid #ddd;
+    margin: 10px 90px;
+    padding: 10px 0 10px 0;
+    font-size: 18px;
+    display: block;
+    text-align: center;
 }
 
 .footer-wrapper p {
     margin: 0;
     text-align: center;
-    font-size: 20px;
-    line-height: 50px;
+    padding-bottom: 5px;
+    font-size: 13px;
 }
 
+/* LOGIN SECTION */
+.popup-section {
+    z-index: -100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.popup-wrapper {
+    overflow: hidden;
+    border-radius: 3px;
+    box-shadow: 0 0 3px 1px #222;
+    width: 350px;
+    height: 400px;
+    margin: auto;
+}
+
+.popup-block {
+    position: relative;
+    width: 700px;
+}
+
+.register-block,
+.login-block {
+    float: left;
+    width: 350px;
+    height: 400px;
+    position: relative;
+    padding: 50px;
+    color: #444;
+    background-color: white;
+}
+
+.register-block .close,
+.login-block .close {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+}
+
+.login-block h3 {
+    margin: -10px 0 20px 0;
+    text-align: center;
+    color: #364eff;
+}
+
+.login-block input {
+    margin-bottom: 10px;
+    height: 30px;
+    width: 100%;
+}
+
+.login-block .login-button {
+    height: 30px;
+    width: 100%;
+    margin: 30px 0 10px 0;
+    color: #fff;
+    border: none;
+    background-color: #444;
+}
+
+.register-block .login-link,
+.login-block .register-link {
+    display: block;
+    margin: auto;
+    cursor: hand;
+    text-align: center;
+    font-size: 12px;
+    color: #364eff;
+}
+
+.register-block .login-link:hover,
+.login-block .register-link:hover {
+    text-decoration: underline;
+}
+
+.register-block h3 {
+    margin: -10px 0 0 0;
+    text-align: center;
+    color: #364eff;
+}
+
+.register-block input {
+    margin-bottom: 3px;
+    height: 30px;
+    width: 100%;
+}
+
+.register-block p {
+    padding: 0;
+    margin: 0 0 2px 0;
+}
+
+.register-block .register-button {
+    height: 30px;
+    width: 100%;
+    margin: 15px 0 0 0;
+    color: #fff;
+    border: none;
+    background-color: #444;
+}
+
+/* --- CUSTOM ANIMATIONS --- */
+.section1 h1,
+.section1 h3,
+.section2 h1,
+.section3 h1,
+.section4 h1,
+.section5 h1,
+.phoneimg,
+.section5 button,
+.section3 .tile img,
+.wewantyou img {
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+}
+
+.section1 h1:hover {
+    margin-left: 400px;
+}
+.section1 h3:hover {
+    margin-left: 150px;
+}
+
+.section2 h1:hover,
+.section3 h1:hover,
+.section4 h1:hover,
+.section5 h1:hover {
+    font-size: 37px;
+}
+
+.phoneimg:hover {
+    right: 60px;
+}
+
+.section3 .tile img:hover {
+    width: 94%;
+}
+
+.section5 button:hover {
+    background-color: #00ffe5;
+}
+
+.wewantyou img:hover {
+    width: 104%;
+    margin-left: -2%;
+    margin-top: -4%;
+}
 
 /* --- RESPONSIVE CSS --- */
 
