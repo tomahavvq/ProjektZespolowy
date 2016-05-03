@@ -52,6 +52,35 @@ $(document).ready(function () {
     $(".section1 h1").addClass("fadeInLeft");
     $(".section1 h3").addClass("fadeInRight");
 
+    $(".section2 h1").waypoint(function () {
+        $(".section2 h1").addClass("fadeInUp")
+    }, {offset: "90%"});
+    $(".phoneimg").waypoint(function () {
+        $(".phoneimg").addClass("fadeInRight")
+    }, {offset: "90%"});
+    $(".maintext").waypoint(function () {
+        $(".maintext").addClass("fadeInUp")
+    }, {offset: "90%"});
+    $(".minititle01 h3").waypoint(function () {
+        $(".minititle01 h3").addClass("fadeInUp")
+    }, {offset: "90%"});
+    $(".minititle01 .leftin").waypoint(function () {
+        $(".minititle01 .leftin").addClass("fadeInLeft")
+    }, {offset: "90%"});
+    $(".minititle01 .rightin").waypoint(function () {
+        $(".minititle01 .rightin").addClass("fadeInRight")
+    }, {offset: "90%"});
+    $(".minititle02 h3").waypoint(function () {
+        $(".minititle02 h3").addClass("fadeInUp")
+    }, {offset: "90%"});
+    $(".minititle02 .leftin").waypoint(function () {
+        $(".minititle02 .leftin").addClass("fadeInLeft")
+    }, {offset: "90%"});
+    $(".minititle02 .rightin").waypoint(function () {
+        $(".minititle02 .rightin").addClass("fadeInRight")
+    }, {offset: "90%"});
+
+
     $("#tile01").waypoint(function () {
         $("#tile01").addClass("fadeInUp");
         setTimeout(function () {
@@ -63,13 +92,13 @@ $(document).ready(function () {
     }, {offset: "90%"});
 
     $(".comment:nth-child(1)").waypoint(function () {
-        $(".comment:nth-child(1)").addClass("fadeInLeft")
+        $(".comment:nth-child(1)").addClass("fadeInRight")
     }, {offset: "90%"});
     $(".comment:nth-child(2)").waypoint(function () {
-        $(".comment:nth-child(2)").addClass("fadeInRight")
+        $(".comment:nth-child(2)").addClass("fadeInLeft")
     }, {offset: "90%"});
     $(".comment:nth-child(3)").waypoint(function () {
-        $(".comment:nth-child(3)").addClass("fadeInLeft")
+        $(".comment:nth-child(3)").addClass("fadeInRight")
     }, {offset: "90%"});
 
     $(".section5 h1").waypoint(function () {
@@ -85,6 +114,6 @@ $(document).ready(function () {
         $(".section5 h3:nth-child(4)").addClass("fadeInLeft")
     }, {offset: "90%"});
     $(".section5 button").waypoint(function () {
-        $(".section5 button").addClass("flipInX")
+        $(".section5 button").addClass("fadeInDown")
     }, {offset: "90%"});
 });
