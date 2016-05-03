@@ -173,6 +173,31 @@ a:hover {
 /*
  * Second box
  */
+.section2 {
+    position: relative;
+    overflow: hidden;
+    padding: 50px 100px;
+    color: #444;
+}
+
+.section2 h1 {
+    margin-bottom: 50px;
+}
+
+.phoneimg {
+    position: absolute;
+    right: 50px;
+    top: 100px;
+}
+
+.phoneimg img {
+    height: 500px;
+}
+
+.section2 h3 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 
 /*
  * Third box
@@ -220,6 +245,7 @@ a:hover {
 .section4 {
     color: #444;
     padding: 50px 250px;
+    overflow: hidden;
 }
 
 .comment {
@@ -289,7 +315,6 @@ a:hover {
     margin-bottom: 90px;
 }
 .section5 button {
-    opacity: 1;
     border-radius: 8px;
     clear: both;
     width: 200px;
@@ -312,8 +337,20 @@ a:hover {
 /*
  * Footer
  */
+.footer {
+    background-color: #222;
+    box-shadow: 0 0 5px 1px #000;
+    z-index: 10;
+}
 .footer-wrapper {
-    min-height: 200px;
+    min-height: 50px;
+}
+
+.footer-wrapper p {
+    margin: 0;
+    text-align: center;
+    font-size: 20px;
+    line-height: 50px;
 }
 
 
