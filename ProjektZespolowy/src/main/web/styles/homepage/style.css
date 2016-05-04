@@ -120,15 +120,15 @@ a:hover {
 }
 
 .background-img-1 {
-    background-image: url("../images/background-img-1.jpg");
+    background-image: url("../../images/background-img-1.jpg");
 }
 
 .background-img-2 {
-    background-image: url("../images/background-img-2.jpg");
+    background-image: url("../../images/background-img-2.jpg");
 }
 
 .background-img-3 {
-    background-image: url("../images/background-img-3.jpg");
+    background-image: url("../../images/background-img-3.jpg");
 }
 
 .content-wrapper {

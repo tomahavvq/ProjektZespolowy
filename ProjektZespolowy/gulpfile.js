@@ -66,7 +66,8 @@ gulp.task('preprocess', function () {
 
     return gulp.src([config.app + '**/*.html', '!' + config.app + 'scripts/**/*.html'])
         .pipe(inject(injectScripts, injectOptions))
-        .pipe(inject(injectStyles, injectOptions))
+	.pipe(inject(gulp.src(config.app + '/styles/homepage/*.css', {read: false}), {starttag: '<!-- inject:home:{{ext}} -->', relative: true}))
+	.pipe(inject(gulp.src(config.app + '/styles/apppage/*.css', {read: false}), {starttag: '<!-- inject:app:{{ext}} -->', relative: true}))
         .pipe(wiredep())
         .pipe(gulp.dest(config.work))
         .pipe(browserSync.reload({stream: true}));
