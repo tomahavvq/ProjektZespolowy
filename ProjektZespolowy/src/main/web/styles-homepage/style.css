@@ -1,9 +1,16 @@
+/* --- PRE-SETS --- */
+@font-face {
+    font-family: 'UbuntuLight';
+    src: url('../fonts/UbuntuLight/UbuntuLight.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/UbuntuLight/UbuntuLight.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/UbuntuLight/UbuntuLight.woff2') format('woff2'), /* Super Modern Browsers */ url('../fonts/UbuntuLight/UbuntuLight.woff') format('woff'), /* Pretty Modern Browsers */ url('../fonts/UbuntuLight/UbuntuLight.ttf') format('truetype'), /* Safari, Android, iOS */ url('../fonts/UbuntuLight/UbuntuLight.svg#UbuntuLight') format('svg'); /* Legacy iOS */
+}
+
 /* --- GLOBAL STYLING --- */
 /*
  * Base structure
  */
 body {
-    font-family: "Ubuntu Light", sans-serif;
+    font-family: 'UbuntuLight', sans-serif;
     color: #fff;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
@@ -53,7 +60,7 @@ a:hover {
 /* Logo */
 .masthead-brand {
     float: left;
-    width: 230px;
+    width: 250px;
 }
 
 .masthead-brand img {
@@ -120,15 +127,15 @@ a:hover {
 }
 
 .background-img-1 {
-    background-image: url("../../images/background-img-1.jpg");
+    background-image: url("../images/background-img-1.jpg");
 }
 
 .background-img-2 {
-    background-image: url("../../images/background-img-2.jpg");
+    background-image: url("../images/background-img-2.jpg");
 }
 
 .background-img-3 {
-    background-image: url("../../images/background-img-3.jpg");
+    background-image: url("../images/background-img-3.jpg");
 }
 
 .content-wrapper {
@@ -265,17 +272,13 @@ a:hover {
 }
 
 .comment p {
-    text-align: left;
+    text-align: justify;
     margin-top: 20px;
     padding: 30px;
 }
 
 .inverted-comment img {
     float: right;
-}
-
-.inverted-comment p {
-    text-align: right;
 }
 
 /*
