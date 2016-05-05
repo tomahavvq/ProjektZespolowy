@@ -1,3 +1,63 @@
+/* --- PRE-SETS --- */
+@font-face {
+    font-family: 'UbuntuLight';
+    src: url('../fonts/UbuntuLight/UbuntuLight.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/UbuntuLight/UbuntuLight.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/UbuntuLight/UbuntuLight.woff2') format('woff2'), /* Super Modern Browsers */ url('../fonts/UbuntuLight/UbuntuLight.woff') format('woff'), /* Pretty Modern Browsers */ url('../fonts/UbuntuLight/UbuntuLight.ttf') format('truetype'), /* Safari, Android, iOS */ url('../fonts/UbuntuLight/UbuntuLight.svg#UbuntuLight') format('svg'); /* Legacy iOS */
+}
+
+/* --- GLOBAL STYLING --- */
+/*
+ * Base structure
+ */
 body {
-    background: red;
+    background-color: gray;
+    font-family: 'UbuntuLight', sans-serif;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    padding-top:75px;
+}
+.navbar{
+    color:gray;
+    height:75px;
+}
+.navbar-header {
+    width:60px;
+}
+.navbar img {
+    width:100%;
+    z-index:999;
+    border-radius:30px;
+    padding-top:0;
+}
+.navbar ul{
+    float:left;
+    line-height:50px;
+}
+.navbar ul > li{
+    display:inline-block;
+    margin-right:40px;
+}
+.navbar ul > li > a{
+    color:gray;
+}
+.navbar ul > li > a:hover{
+    color:white;
+    background-color: inherit;
+}
+.navbar p{
+    line-height:45px;
+    color:white;
+}
+.section{
+
+    color: black;
+    padding:15px 0px;
+
+}
+
+.block
+{
+    padding:5px;
+    background-color: white;
+    height:300px;
+    width: 100%;
 }
