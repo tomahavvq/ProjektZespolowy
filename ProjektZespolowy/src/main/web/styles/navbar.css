@@ -2,7 +2,7 @@
  * Header
  */
 .navbar-maxwell {
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: rgba(0, 0, 0, 0.85);
     z-index: 1000;
     position: fixed;
     top: 0;
@@ -51,10 +51,6 @@
 }
 
 .navbar-nav > li {
-    display: inline-block;
-}
-
-.navbar-nav > li {
     margin: 0 10px;
 }
 
@@ -89,20 +85,20 @@
 }
 
 /* Navbar Collapse */
-#maxwell-collapse ul {
+#maxwell-collapse-2 ul {
     margin: 5px 0;
 }
 
-#maxwell-collapse ul > li {
+#maxwell-collapse-2 ul > li {
     display: inline-block;
 }
 
-#maxwell-collapse img {
+#maxwell-collapse-2 img {
     height: 35px;
 }
 
-#maxwell-collapse .nav > li > a:focus,
-#maxwell-collapse .nav > li > a:hover {
+#maxwell-collapse-2 .nav > li > a:focus,
+#maxwell-collapse-2 .nav > li > a:hover {
     background-color: transparent;
 }
 

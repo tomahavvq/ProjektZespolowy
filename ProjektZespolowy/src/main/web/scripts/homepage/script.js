@@ -50,7 +50,7 @@ $(document).ready(function () {
 
     var height = $(window).height();
     var loginHeight = $(".popup-wrapper").height();
-    var margin = (height - loginHeight) / 2 - 35;
+    var margin = (height - loginHeight) / 2;
     $(".popup-wrapper").css("margin-top", margin);
 
     /* Animations */

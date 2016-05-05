@@ -251,6 +251,9 @@ a:hover {
 }
 
 .wewantyou img {
+    display: block;
+    margin: auto;
+    margin-left: 0%;
     width: 100%;
     border-radius: 50%;
     position: relative;
@@ -445,12 +448,47 @@ a:hover {
 .wewantyou img:hover {
     width: 104%;
     margin-left: -2%;
-    margin-top: -4%;
 }
 
 /* --- RESPONSIVE CSS --- */
-
 @media (max-width: 992px) {
+    .section1,
+    .section2,
+    .section3,
+    .section4,
+    .section5 {
+        overflow: hidden;
+        padding: 50px 20px;
+    }
+
+    .section1 h1 {
+        display: block;
+        text-align: center;
+        min-width: 300px;
+        font-size: 40px;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0;
+    }
+
+    .section1 h1:hover {
+        margin-left: 0;
+    }
+
+    .section1 h3 {
+        margin-top: 200px;
+        display: block;
+        text-align: center;
+        font-size: 25px;
+        margin-left: 30px;
+        margin-right: 30px;
+        padding: 0;
+    }
+
+    .section1 h3:hover {
+        margin-left: 30px;
+    }
+
     .comment img {
         float: none;
     }
@@ -458,4 +496,39 @@ a:hover {
     .inverted-comment img {
         float: none;
     }
+
+    .phoneimg {
+        display: none;
+    }
+
+    .section2 p {
+        text-align: justify;
+    }
+
+    .section3 .tile,
+    .section3 .tile img{
+        width: 250px;
+    }
+
+    .section4 h1 {
+        font-size: 20px;
+    }
+
+    .section4 h1:hover {
+        font-size: 23px;
+    }
+
+    .section4 img {
+        width: 250px;
+    }
+
+    .wewantyou img {
+        margin: auto;
+        width: 250px;
+    }
+    .wewantyou img:hover {
+        margin-left: auto;
+        width: 270px;
+    }
+
 }
