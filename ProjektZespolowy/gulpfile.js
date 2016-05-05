@@ -42,34 +42,26 @@ gulp.task('clean', function () {
 });
 
 gulp.task('copy-images', function () {
-    return gulp.src(config.app + '/images/**')
+    return gulp.src(config.app + '/images/**/*')
         .pipe(gulp.dest(config.dist + '/images/'));
 });
 
 gulp.task('copy-fonts', function () {
-    return gulp.src([config.bootstrapDir + '/fonts/**/*',config.app + '/fonts/**/*'])
-        .pipe(gulp.dest(config.dist + '/fonts'));
+    return gulp.src([config.bootstrapDir + '/fonts/**/*', config.app + '/fonts/**/*'])
+        .pipe(gulp.dest(config.dist + '/fonts/'));
 });
 
 gulp.task('preprocess', function () {
-    var injectStyles = gulp.src([
-        config.app + '/**/*.css'
-    ], {read: false});
-
-    var injectScripts = gulp.src([
-        config.app + '/scripts/**/*.js'
-    ]).pipe(angularFilesort());
-
-    var injectOptions = {
-        relative: true
-    };
-
-;
+    var homeScripts = gulp.src([config.app + '/scripts/homepage/*.js', config.app + '/scripts/*.js']).pipe(angularFilesort());
+    var homeStyles = gulp.src([config.app + '/styles/homepage/*.css', config.app + '/styles/*.css'], {read: false});
+    var appScripts = gulp.src([config.app + '/scripts/apppage/*.js', config.app + '/scripts/*.js']).pipe(angularFilesort());
+    var appStyles = gulp.src([config.app + '/styles/apppage/*.css', config.app + '/styles/*.css'], {read: false});
 
     return gulp.src([config.app + '**/*.html', '!' + config.app + 'scripts/**/*.html'])
-        .pipe(inject(injectScripts, injectOptions))
-	.pipe(inject(gulp.src(config.app + '/styles-homepage/*.css', {read: false}), {starttag: '<!-- inject:home:{{ext}} -->', relative: true}))
-	.pipe(inject(gulp.src(config.app + '/styles-apppage/*.css', {read: false}), {starttag: '<!-- inject:app:{{ext}} -->', relative: true}))
+        .pipe(inject(homeScripts, {starttag: '<!-- inject:home:js -->', relative: true}))
+        .pipe(inject(appScripts, {starttag: '<!-- inject:app:js -->', relative: true}))
+        .pipe(inject(homeStyles, {starttag: '<!-- inject:home:css -->', relative: true}))
+        .pipe(inject(appStyles, {starttag: '<!-- inject:app:css -->', relative: true}))
         .pipe(wiredep())
         .pipe(gulp.dest(config.work))
         .pipe(browserSync.reload({stream: true}));
@@ -88,7 +80,6 @@ gulp.task('preprocess-test', function () {
     var injectOptions = {
         relative: true
     };
-
 
     return gulp.src('src/test/karma.conf.js')
         .pipe(wiredep(wiredepOpts))

@@ -1,8 +1,8 @@
 /* --- PRE-SETS --- */
 @font-face {
     font-family: 'UbuntuLight';
-    src: url('../fonts/UbuntuLight/UbuntuLight.eot'); /* IE9 Compat Modes */
-    src: url('../fonts/UbuntuLight/UbuntuLight.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/UbuntuLight/UbuntuLight.woff2') format('woff2'), /* Super Modern Browsers */ url('../fonts/UbuntuLight/UbuntuLight.woff') format('woff'), /* Pretty Modern Browsers */ url('../fonts/UbuntuLight/UbuntuLight.ttf') format('truetype'), /* Safari, Android, iOS */ url('../fonts/UbuntuLight/UbuntuLight.svg#UbuntuLight') format('svg'); /* Legacy iOS */
+    src: url('../../fonts/UbuntuLight/UbuntuLight.eot'); /* IE9 Compat Modes */
+    src: url('../../fonts/UbuntuLight/UbuntuLight.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../../fonts/UbuntuLight/UbuntuLight.woff2') format('woff2'), /* Super Modern Browsers */ url('../../fonts/UbuntuLight/UbuntuLight.woff') format('woff'), /* Pretty Modern Browsers */ url('../../fonts/UbuntuLight/UbuntuLight.ttf') format('truetype'), /* Safari, Android, iOS */ url('../../fonts/UbuntuLight/UbuntuLight.svg#UbuntuLight') format('svg'); /* Legacy iOS */
 }
 
 /* --- GLOBAL STYLING --- */
