@@ -10,7 +10,7 @@ function selectActiveTab(num) {
 }
 
 $(document).ready(function () {
-    var headerHeight = $(".masthead").height();
+    var headerHeight = $(".navbar-maxwell").height();
 
     /* Animate page on click of tab */
     $(".scroll").click(function () {
@@ -28,25 +28,25 @@ $(document).ready(function () {
             selectActiveTab(2);
         else if (direction == "up")
             selectActiveTab(1);
-    }, {offset: "60px"});
+    }, {offset: "62px"});
     $(".content-block:nth-child(4)").waypoint(function (direction) {
         if (direction == "down")
             selectActiveTab(3);
         else if (direction == "up")
             selectActiveTab(2);
-    }, {offset: "60px"});
+    }, {offset: "62px"});
     $(".content-block:nth-child(5)").waypoint(function (direction) {
         if (direction == "down")
             selectActiveTab(4);
         else if (direction == "up")
             selectActiveTab(3);
-    }, {offset: "60px"});
+    }, {offset: "62px"});
     $(".content-block:nth-child(6)").waypoint(function (direction) {
         if (direction == "down")
             selectActiveTab(5);
         else if (direction == "up")
             selectActiveTab(4);
-    }, {offset: "61px"});
+    }, {offset: "62px"});
 
     var height = $(window).height();
     var loginHeight = $(".popup-wrapper").height();
