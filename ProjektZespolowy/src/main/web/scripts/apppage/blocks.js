@@ -1,3 +1,7 @@
-$(".twojastara div").css( "height", function(v){
-    return Math.random() * 250 + 100 | 0
+$(function(){
+    $(".left").addClass("active");
+});
+
+$(function(){
+    $(".right").addClass("active");
 });
