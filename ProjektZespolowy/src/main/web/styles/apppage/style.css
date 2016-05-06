@@ -19,6 +19,7 @@ body {
 .section {
     color: black;
     padding: 15px 0;
+
 }
 
 .block {
@@ -26,6 +27,11 @@ body {
     background-color: white;
     height: 300px;
     width: 100%;
+    box-shadow: 0px 0px 15px black;
+    filter: grayscale(100%);
+}
+.block:hover{
+    filter: grayscale(0%);
 }
 
 .icon {
@@ -39,4 +45,40 @@ body {
     width: 100%;
     border-radius: 30px;
     z-index: 999;
+}
+.left {
+    transition-property: margin-left;
+    transition-duration: 2s;
+    -webkit-transition-property: margin-left; /* Safari */
+    -webkit-transition-duration: 2s; /* Safari */
+    margin-left:-120px;
+}
+.right{
+    transition-property: margin-left;
+    transition-duration: 2s;
+    -webkit-transition-property: margin-left; /* Safari */
+    -webkit-transition-duration: 2s; /* Safari */
+    margin-left:120px;
+}
+.left.active{
+    margin-left:0px;
+}
+.right.active{
+    margin-left:0px;
+}
+.tren{
+    background-image:url(../../images/tren.jpg);
+
+}
+.atl{
+    background-image:url(../../images/atl.jpg);
+
+}
+.stat{
+    background-image:url(../../images/stat.jpg);
+
+}
+.bmi{
+    background-image:url(../../images/bmi.jpg);
+
 }

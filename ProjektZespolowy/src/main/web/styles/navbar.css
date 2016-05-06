@@ -104,11 +104,22 @@
 
 .dropdown a {
     color: white;
+    background-color: transparent !important;
+}
+.dropdown-menu {
+    background-color: rgba(0, 0, 0, 0.85);
+    top:44px;
+}
+.dropdown-menu li > a
+{
+    background-color: transparent !important;
+    color:white;
+}
+.dropdown-menu li > a:hover
+{
+    color:grey;
 }
 
-.dropdown-menu {
-    color: white;
-}
 
 /* --- RESPONSIVE CSS --- */
 
