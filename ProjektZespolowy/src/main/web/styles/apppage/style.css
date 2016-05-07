@@ -29,9 +29,11 @@ body {
     width: 100%;
     box-shadow: 0px 0px 15px black;
     filter: grayscale(100%);
+    -webkit-filter:grayscale(100%); /*kompatybilność z roznymi przegladarkami*/
 }
 .block:hover{
     filter: grayscale(0%);
+    -webkit-filter:grayscale(0%);   /*kompatybilność z roznymi przegladarkami*/
 }
 
 .icon {
