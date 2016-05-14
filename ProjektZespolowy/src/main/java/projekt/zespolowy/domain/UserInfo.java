@@ -10,8 +10,11 @@ import javax.persistence.*;
 public class UserInfo {
 
     @Id
+    @Column(name = "user_id")
+    private Long userId;
+
     @OneToOne
-    @PrimaryKeyJoinColumn(name = "user_id")
+    @PrimaryKeyJoinColumn(name = "user_id", referencedColumnName = "id")
     private User user;
 
     @Column(name = "training_amount")
@@ -35,6 +38,7 @@ public class UserInfo {
 
     public void setUser(User user) {
         this.user = user;
+        this.userId = user.getId();
     }
 
     public Integer getTrainingAmount() {
