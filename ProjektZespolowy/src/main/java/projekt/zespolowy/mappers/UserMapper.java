@@ -7,7 +7,7 @@ import projekt.zespolowy.web.dto.UserInfoDTO;
 /**
  * Created by tomahavvq on 13.05.16.
  */
-public class UserServiceMapper {
+public class UserMapper {
 
     public static UserInfoDTO mapUserInfoEntityToDTO(UserInfo userInfo) {
         UserInfoDTO userInfoDTO = new UserInfoDTO();

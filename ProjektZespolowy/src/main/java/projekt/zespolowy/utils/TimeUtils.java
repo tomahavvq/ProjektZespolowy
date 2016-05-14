@@ -5,7 +5,6 @@ package projekt.zespolowy.utils;
  */
 public class TimeUtils {
 
-
     public static String secondsToTime(Integer secondsCount) {
 
         int seconds = secondsCount % 60;
