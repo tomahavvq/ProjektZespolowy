@@ -1,3 +1,5 @@
+CREATE DATABASE zesp;
+USE zesp;
 SET NAMES utf8
 COLLATE utf8_polish_ci;
 CREATE USER 'zesp'@'%'

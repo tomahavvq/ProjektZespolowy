@@ -33,6 +33,7 @@ body {
 
 }
 .block:hover{
+    cursor:pointer;
     filter: grayscale(0%);
     -webkit-filter:grayscale(0%);   /*kompatybilność z roznymi przegladarkami*/
 }
