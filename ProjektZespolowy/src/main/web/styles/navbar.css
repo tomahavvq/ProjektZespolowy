@@ -1,0 +1,134 @@
+/*
+ * Header
+ */
+.navbar-maxwell {
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    box-shadow: 0 0 5px 1px #000;
+    border: none;
+    border-radius: 0;
+    margin: 0;
+}
+
+.navbar-wrapper {
+    max-width: 800px;
+    margin: 5px auto;
+}
+
+/* Logo */
+.navbar-brand {
+    float: left;
+    height: 50px;
+    padding: 0;
+    font-size: 12px;
+    line-height: 50px;
+}
+
+.navbar-brand img {
+    border-radius: 50%;
+    float: left;
+    width: 50px;
+    height: 50px;
+}
+
+.navbar-brand h3 {
+    float: left;
+    text-align: center;
+    line-height: 50px;
+    margin: 0 10px;
+}
+
+/* Tabs */
+.navbar-collapse {
+    box-shadow: none;
+}
+
+.navbar-nav {
+    float: right;
+    margin: 8px 0;
+}
+
+.navbar-nav > li {
+    margin: 0 10px;
+}
+
+.navbar-nav > li > a {
+    padding: 5px 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, .75);
+    border-bottom: 2px solid transparent;
+}
+
+.navbar-nav > li > a:hover,
+.navbar-nav > li > a:focus {
+    background-color: transparent;
+    border-bottom-color: #ddd;
+}
+
+.navbar-nav > .active > a,
+.navbar-nav > .active > a:hover,
+.navbar-nav > .active > a:focus {
+    color: #fff;
+    border-bottom-color: #fff;
+}
+
+/* Toggle Button */
+.navbar-toggle {
+    border-color: white;
+}
+
+.navbar-toggle .icon-bar {
+    background-color: white;
+}
+
+/* Navbar Collapse */
+#maxwell-collapse-2 ul {
+    margin: 5px 0;
+}
+
+#maxwell-collapse-2 ul > li {
+    display: inline-block;
+}
+
+#maxwell-collapse-2 img {
+    height: 35px;
+}
+
+#maxwell-collapse-2 .nav > li > a:focus,
+#maxwell-collapse-2 .nav > li > a:hover {
+    background-color: transparent;
+}
+
+.dropdown a {
+    color: white;
+    background-color: transparent !important;
+}
+.dropdown-menu {
+    background-color: rgba(0, 0, 0, 0.85);
+    top:44px;
+}
+.dropdown-menu li > a
+{
+    background-color: transparent !important;
+    color:white;
+}
+.dropdown-menu li > a:hover
+{
+    color:grey;
+}
+
+
+/* --- RESPONSIVE CSS --- */
+
+@media (max-width: 992px) {
+    .navbar-nav {
+        width: 100%;
+    }
+
+    .navbar-nav > li {
+        display: block;
+    }
+}
