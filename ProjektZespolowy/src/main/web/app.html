@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html>
-<head>
+<html ng-app="maxApp">
+<head >
     <meta charset="UTF-8"/>
     <link rel="icon" href="images/favicon.ico"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- CSS For local developing -->
-    <link type="text/css" rel="stylesheet" href="libraries/bootstrap/css/bootstrap.min.css"/>
+    <!--<link type="text/css" rel="stylesheet" href="libraries/bootstrap/css/bootstrap.min.css"/>
     <link type="text/css" rel="stylesheet" href="libraries/animate/animate.css"/>
     <link type="text/css" rel="stylesheet" href="styles/apppage/style.css"/>
-    <link type="text/css" rel="stylesheet" href="styles/navbar.css"/>
+    <link type="text/css" rel="stylesheet" href="styles/navbar.css"/>-->
 
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
@@ -22,7 +22,7 @@
     <!-- endbuild -->
     <title>Maxwell Sport | App</title>
 </head>
-<body>
+<body >
 <div class="container-fluid">
     <div class="row">
         <nav class="col-lg-12 col-md-12 col-sm-12 col-xs-12 navbar navbar-maxwell">
@@ -30,7 +30,7 @@
             <div class="navbar-wrapper">
                 <div class="navbar-header">
                     <a class="navbar-brand " href="#">
-                        <img alt="Maxwell Image" src="images/maxwell.png"/>
+                        <img ui-sref='menu' alt="Maxwell Image" src="images/maxwell.png"/>
                     </a>
                 </div>
 
@@ -56,40 +56,21 @@
     </div>
 
     <!--TODO: dodanie elementow poszczegolnych blokow-->
+    <div ui-view></div>
 
-    <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-            <div class="section ">
-                <div class="block tren animated fadeInLeft">trening</div>
-            </div>
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-            <div class="section ">
-                <div class="block atl animated fadeInRight">atlas</div>
-            </div>
-        </div>
-    </div>
 
-    <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-            <div class="section ">
-                <div class="block bmi animated fadeInLeft">kalkulatory</div>
-            </div>
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-            <div class="section ">
-                <div class="block stat animated fadeInRight">statystyki</div>
-            </div>
-        </div>
-    </div>
+
+
+
     <!--TODO: dodanie stopki, elementów stopki, zjeść coś -->
 </div>
 <!-- JS For local developing -->
-<script type="text/javascript" src="libraries/jquery/jquery.min.js"></script>
+<!--<script type="text/javascript" src="libraries/jquery/jquery.min.js"></script>
 <script type="text/javascript" src="libraries/jquery/jquery-ui.min.js"></script>
 <script type="text/javascript" src="libraries/bootstrap/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="libraries/angular/angular.min.js"></script>
-<script type="text/javascript" src="scripts/apppage/blocks.js"></script>
+<script  src="libraries/angular/angular.min.js"></script>
+<script  src="scripts/apppage/maxwellapp.js"></script> -->
+
 
 <!-- build:js scripts/vendor.js -->
 <!-- bower:js -->
