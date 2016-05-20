@@ -68,3 +68,58 @@ body {
     background-image:url(../../images/bmi.jpg);
 
 }
+
+/*
+ * Footer
+ */
+.footer {
+    background-color: #222;
+    box-shadow: 0 0 5px 1px #000;
+    z-index: 10;
+    color:white;
+    padding-bottom: 20px;
+}
+
+.footer-wrapper {
+    min-height: 100px;
+}
+.footer-wrapper h2 {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 25px;
+}
+.footer-wrapper h3 {
+    border-bottom: 1px solid #ddd;
+    margin: 10px 90px;
+    padding: 10px 0 10px 0;
+    font-size: 18px;
+    display: block;
+    text-align: center;
+}
+
+.footer-wrapper p {
+    margin: 0;
+    text-align: center;
+    padding-bottom: 5px;
+    font-size: 13px;
+}
+.content{
+    color:grey;
+    height:500px;
+}
+.collapse ul > li:hover{
+    color:white;
+    cursor:pointer;
+}
+.calc-content{
+    color:white;
+    margin-left:auto;
+    margin-right:auto;
+}
+.text-field{
+    border-style:none;
+    border-radius:3px;
+    background-color:lightgrey;
+    color:black;
+    padding-left:3px;
+}
