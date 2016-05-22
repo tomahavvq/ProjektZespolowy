@@ -1,0 +1,35 @@
+// URL: http://10.0.0.10:8080/api/product GET
+[
+  {
+    "id": 1,
+    "carbohydrates": 10,
+    "protein": 10,
+    "fat": 10,
+    "kcal": 100,
+    "name": "SER"
+  },
+  {
+    "id": 2,
+    "carbohydrates": 10,
+    "protein": 10,
+    "fat": 10,
+    "kcal": 100,
+    "name": "SER1"
+  },
+  {
+    "id": 3,
+    "carbohydrates": 10,
+    "protein": 10,
+    "fat": 10,
+    "kcal": 100,
+    "name": "SER2"
+  }
+]
+// URL: http://10.0.0.10:8080/api/product POST mozna tez tym updatować doodajac na poczatku id
+{
+  "carbohydrates": 10,
+  "protein": 10,
+  "fat": 10,
+  "kcal": 100,
+  "name": "SER2"
+}

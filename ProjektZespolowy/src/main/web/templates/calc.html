@@ -1,0 +1,72 @@
+<div class="bounceInDown" ng-controller="calculatorController as calc" >
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 ">
+        <nav class="navbar navbar-inverse navbar-submenu">
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav ">
+                    <li ng-class="{active:calc.isChosen(1)}" ng-click="calc.choseCalc(1)">
+                        Kalkulator BMI
+                    </li>
+                    <li ng-class="{active:calc.isChosen(2)}" ng-click="calc.choseCalc(2)">
+                        Zapotrzebowanie na wodę
+                    </li>
+                    <li ng-class="{active:calc.isChosen(3)}" ng-click="calc.choseCalc(3)">
+                        Współczynnik WHR
+                    </li>
+                    <li ng-class="{active:calc.isChosen(4)}" ng-click="calc.choseCalc(4)">
+                        Należna masa ciała
+                    </li>
+                    <li ng-class="{active:calc.isChosen(5)}" ng-click="calc.choseCalc(5)">
+                        Zapotrzebowanie energetyczne wg Harissa-Benedicta
+                    </li>
+                    <li ng-class="{active:calc.isChosen(6)}" ng-click="calc.choseCalc(6)">
+                        Zapotrzebowanie na białko
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+
+
+</div>
+<div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <div class="calc-content">
+        <div ng-show="calc.isChosen(1)">
+            <h2>Calculate your BMI</h2>
+
+                <p>Height: <input class="text-field" type="text" ng-model="calc.height"></p>
+                <p>Weight: <input class="text-field" type="text" ng-model="calc.weight"></p>
+                <p><input class="text-field" type="submit" value="Calculate" ng-click="calc.calcBMI(calc.height, calc.weight)"></p>
+        </div>
+        <div ng-show="calc.isChosen(2)">
+            <h2>Oblicz swoje zapotrzebowanie na wodę</h2>
+
+        </div>
+        <div ng-show="calc.isChosen(3)">
+            <h2>Oblicz swój WHR</h2>
+        </div>
+        <div ng-show="calc.isChosen(4)">
+            <h2>Należną masa ciała</h2>
+        </div>
+        <div ng-show="calc.isChosen(5)">
+            <h2>Oblicz swoje zapotrzebowanie energetyczne</h2>
+        </div>
+        <div ng-show="calc.isChosen(6)">
+            <h2>Oblicz swoje zapotrzebowanie na białko</h2>
+        </div>
+        </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <div class="calc-content">
+            <h2>Result:</h2>
+            <p>{{calc.result}}</p>
+
+        </div>
+    </div>
+
+</div>
+</div>
+
+

@@ -1,0 +1,125 @@
+/* --- PRE-SETS --- */
+@font-face {
+    font-family: 'UbuntuLight';
+    src: url('../../fonts/UbuntuLight/UbuntuLight.eot'); /* IE9 Compat Modes */
+    src: url('../../fonts/UbuntuLight/UbuntuLight.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../../fonts/UbuntuLight/UbuntuLight.woff2') format('woff2'), /* Super Modern Browsers */ url('../../fonts/UbuntuLight/UbuntuLight.woff') format('woff'), /* Pretty Modern Browsers */ url('../../fonts/UbuntuLight/UbuntuLight.ttf') format('truetype'), /* Safari, Android, iOS */ url('../../fonts/UbuntuLight/UbuntuLight.svg#UbuntuLight') format('svg'); /* Legacy iOS */
+}
+
+/* --- GLOBAL STYLING --- */
+/*
+ * Base structure
+ */
+body {
+    background-color: gray;
+    font-family: 'UbuntuLight', sans-serif;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    padding-top: 75px;
+}
+
+.section {
+    color: black;
+    padding: 15px 0;
+
+}
+
+.block {
+    padding: 5px;
+    background-color: white;
+    height: 300px;
+    width: 100%;
+    box-shadow: 0px 0px 15px black;
+    filter: grayscale(100%);
+    -webkit-filter:grayscale(100%); /*kompatybilność z roznymi przegladarkami*/
+
+}
+.block:hover{
+    cursor:pointer;
+    filter: grayscale(0%);
+    -webkit-filter:grayscale(0%);   /*kompatybilność z roznymi przegladarkami*/
+}
+
+.icon {
+    background-color: transparent !important;
+    padding-top: 13px;
+    height: 75px;
+    width: 45px;
+}
+
+.icon img {
+    width: 100%;
+    border-radius: 30px;
+    z-index: 999;
+}
+
+
+.tren{
+    background-image:url(../../images/tren.jpg);
+
+}
+.atl{
+    background-image:url(../../images/atl.jpg);
+
+}
+.stat{
+    background-image:url(../../images/stat.jpg);
+
+}
+.bmi{
+    background-image:url(../../images/bmi.jpg);
+
+}
+
+/*
+ * Footer
+ */
+.footer {
+    background-color: #222;
+    box-shadow: 0 0 5px 1px #000;
+    z-index: 10;
+    color:white;
+    padding-bottom: 20px;
+}
+
+.footer-wrapper {
+    min-height: 100px;
+}
+.footer-wrapper h2 {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 25px;
+}
+.footer-wrapper h3 {
+    border-bottom: 1px solid #ddd;
+    margin: 10px 90px;
+    padding: 10px 0 10px 0;
+    font-size: 18px;
+    display: block;
+    text-align: center;
+}
+
+.footer-wrapper p {
+    margin: 0;
+    text-align: center;
+    padding-bottom: 5px;
+    font-size: 13px;
+}
+.content{
+    color:grey;
+    height:500px;
+}
+.collapse ul > li:hover{
+    color:white;
+    cursor:pointer;
+}
+.calc-content{
+    color:white;
+    margin-left:auto;
+    margin-right:auto;
+}
+.text-field{
+    border-style:none;
+    border-radius:3px;
+    background-color:lightgrey;
+    color:black;
+    padding-left:3px;
+}

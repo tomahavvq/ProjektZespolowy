@@ -1,0 +1,543 @@
+/* --- PRE-SETS --- */
+@font-face {
+    font-family: 'UbuntuLight';
+    src: url('../../fonts/UbuntuLight/UbuntuLight.eot'); /* IE9 Compat Modes */
+    src: url('../../fonts/UbuntuLight/UbuntuLight.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../../fonts/UbuntuLight/UbuntuLight.woff2') format('woff2'), /* Super Modern Browsers */ url('../../fonts/UbuntuLight/UbuntuLight.woff') format('woff'), /* Pretty Modern Browsers */ url('../../fonts/UbuntuLight/UbuntuLight.ttf') format('truetype'), /* Safari, Android, iOS */ url('../../fonts/UbuntuLight/UbuntuLight.svg#UbuntuLight') format('svg'); /* Legacy iOS */
+}
+
+/* --- GLOBAL STYLING --- */
+/*
+ * Base structure
+ */
+body {
+    font-family: 'UbuntuLight', sans-serif;
+    color: #fff;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.section2 h1,
+.section3 h1,
+.section4 h1,
+.section5 h1 {
+    font-size: 35px;
+    height: 60px;
+    line-height: 60px;
+}
+
+.animated {
+    opacity: 0;
+}
+
+/*
+ * Links
+ */
+a,
+a:focus,
+a:hover {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* --- PAGE STYLE --- */
+
+/*
+ * Background
+ */
+.background-color {
+    background-color: #fff;
+    box-shadow: 0 0 5px 1px #444;
+    z-index: 10;
+}
+
+.background-img {
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.background-img-1 {
+    background-image: url("../../images/background-img-1.jpg");
+}
+
+.background-img-2 {
+    background-image: url("../../images/background-img-2.jpg");
+}
+
+.background-img-3 {
+    background-image: url("../../images/background-img-3.jpg");
+}
+
+.content-wrapper {
+    margin: 0 -15px;
+    min-height: 500px;
+}
+
+.black-surface {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/*
+ * Content Default
+ */
+.content {
+    padding: 100px;
+}
+
+.content h1,
+.content h2,
+.content h3 {
+    margin: 0;
+    text-align: center;
+}
+
+/*
+ * First box
+ */
+.section1 h1 {
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-left: 35%;
+    text-align: right;
+    font-weight: bold;
+    font-size: 90px;
+    color: #fff;
+    padding: 0 30px;
+}
+
+.section1 h3 {
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: left;
+    margin: 10% 20% 1% 15%;
+    font-weight: bold;
+    font-size: 50px;
+    color: #3399FF;
+    padding: 0 30px;
+}
+
+/*
+ * Second box
+ */
+.section2 {
+    position: relative;
+    overflow: hidden;
+    padding: 50px 100px;
+    color: #444;
+}
+
+.section2 h1 {
+    margin-bottom: 50px;
+}
+
+.phoneimg {
+    position: absolute;
+    right: 50px;
+    top: 100px;
+}
+
+.phoneimg img {
+    height: 500px;
+}
+
+.section2 h3 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/*
+ * Third box
+ */
+.section3 {
+    padding-top: 50px;
+    padding-bottom: 0;
+}
+
+.section3 h1 {
+    margin-bottom: 40px;
+}
+
+.section3 .tile {
+    margin: 0 auto;
+    width: 300px;
+    height: 360px;
+
+}
+
+.section3 .tile img {
+    border-radius: 50%;
+    display: block;
+    margin: auto;
+    width: 90%;
+}
+
+.section3 .tile h3 {
+    line-height: 60px;
+    text-align: center;
+    width: 100%;
+}
+
+/*
+ * Fourth box
+ */
+.section4 {
+    overflow: hidden;
+    color: #444;
+    padding: 50px 250px;
+}
+
+.section4 h1 {
+    margin: -20px 0 20px 0;
+}
+
+.comment {
+    margin: 10px 0;
+}
+
+.comment img {
+    display: block;
+    margin: auto;
+    float: left;
+    border-radius: 50%;
+}
+
+.comment p {
+    text-align: justify;
+    margin-top: 20px;
+    padding: 30px;
+}
+
+.inverted-comment img {
+    float: right;
+}
+
+/*
+ * Fifth box
+ */
+.section5 {
+    padding: 50px 100px;
+    overflow: hidden;
+}
+
+.section5 h1 {
+    margin: -30px 0 30px 0;
+}
+
+.joinininfo {
+    margin: 20px auto;
+    width: 90%;
+}
+
+.joinininfo p {
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 20px;
+}
+
+.joinininfo button {
+    border-radius: 4px;
+    width: 150px;
+    height: 50px;
+    display: block;
+    margin: 60px auto 60px auto;
+    background-color: #008fff;
+    border: none;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.wewantyou {
+    margin: auto;
+    width: 300px;
+}
+
+.wewantyou img {
+    display: block;
+    margin: auto;
+    margin-left: 0%;
+    width: 100%;
+    border-radius: 50%;
+    position: relative;
+}
+
+.wewantyou h3 {
+    margin-top: 20px;
+}
+
+/*
+ * Footer
+ */
+.footer {
+    background-color: #222;
+    box-shadow: 0 0 5px 1px #000;
+    z-index: 10;
+    padding-bottom: 20px;
+}
+
+.footer-wrapper {
+    min-height: 100px;
+}
+.footer-wrapper h2 {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 25px;
+}
+.footer-wrapper h3 {
+    border-bottom: 1px solid #ddd;
+    margin: 10px 90px;
+    padding: 10px 0 10px 0;
+    font-size: 18px;
+    display: block;
+    text-align: center;
+}
+
+.footer-wrapper p {
+    margin: 0;
+    text-align: center;
+    padding-bottom: 5px;
+    font-size: 13px;
+}
+
+/* LOGIN SECTION */
+.popup-section {
+    z-index: -100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.popup-wrapper {
+    overflow: hidden;
+    border-radius: 3px;
+    box-shadow: 0 0 3px 1px #222;
+    width: 350px;
+    height: 400px;
+    margin: auto;
+}
+
+.popup-block {
+    position: relative;
+    width: 700px;
+}
+
+.register-block,
+.login-block {
+    float: left;
+    width: 350px;
+    height: 400px;
+    position: relative;
+    padding: 50px;
+    color: #444;
+    background-color: white;
+}
+
+.register-block .close,
+.login-block .close {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+}
+
+.login-block h3 {
+    margin: -10px 0 20px 0;
+    text-align: center;
+    color: #364eff;
+}
+
+.login-block input {
+    margin-bottom: 10px;
+    height: 30px;
+    width: 100%;
+}
+
+.login-block .login-button {
+    height: 30px;
+    width: 100%;
+    margin: 30px 0 10px 0;
+    color: #fff;
+    border: none;
+    background-color: #444;
+}
+
+.register-block .login-link,
+.login-block .register-link {
+    display: block;
+    margin: auto;
+    cursor: hand;
+    text-align: center;
+    font-size: 12px;
+    color: #364eff;
+}
+
+.register-block .login-link:hover,
+.login-block .register-link:hover {
+    text-decoration: underline;
+}
+
+.register-block h3 {
+    margin: -10px 0 0 0;
+    text-align: center;
+    color: #364eff;
+}
+
+.register-block input {
+    margin-bottom: 3px;
+    height: 30px;
+    width: 100%;
+}
+
+.register-block p {
+    padding: 0;
+    margin: 0 0 2px 0;
+}
+
+.register-block .register-button {
+    height: 30px;
+    width: 100%;
+    margin: 15px 0 0 0;
+    color: #fff;
+    border: none;
+    background-color: #444;
+}
+
+/* --- CUSTOM ANIMATIONS --- */
+.section1 h1,
+.section1 h3,
+.section2 h1,
+.section3 h1,
+.section4 h1,
+.section5 h1,
+.phoneimg,
+.section5 button,
+.section3 .tile img,
+.wewantyou img {
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+}
+
+.section1 h1:hover {
+    margin-left: 400px;
+}
+.section1 h3:hover {
+    margin-left: 150px;
+}
+
+.section2 h1:hover,
+.section3 h1:hover,
+.section4 h1:hover,
+.section5 h1:hover {
+    font-size: 37px;
+}
+
+.phoneimg:hover {
+    right: 60px;
+}
+
+.section3 .tile img:hover {
+    width: 94%;
+}
+
+.section5 button:hover {
+    background-color: #00ffe5;
+}
+
+.wewantyou img:hover {
+    width: 104%;
+    margin-left: -2%;
+}
+
+/* --- RESPONSIVE CSS --- */
+@media (max-width: 992px) {
+    .section1,
+    .section2,
+    .section3,
+    .section4,
+    .section5 {
+        overflow: hidden;
+        padding: 50px 20px;
+    }
+
+    .section1 h1 {
+        display: block;
+        text-align: center;
+        min-width: 300px;
+        font-size: 40px;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0;
+    }
+
+    .section1 h1:hover {
+        margin-left: 0;
+    }
+
+    .section1 h3 {
+        margin-top: 200px;
+        display: block;
+        text-align: center;
+        font-size: 25px;
+        margin-left: 30px;
+        margin-right: 30px;
+        padding: 0;
+    }
+
+    .section1 h3:hover {
+        margin-left: 30px;
+    }
+
+    .comment img {
+        float: none;
+    }
+
+    .inverted-comment img {
+        float: none;
+    }
+
+    .phoneimg {
+        display: none;
+    }
+
+    .section2 p {
+        text-align: justify;
+    }
+
+    .section3 .tile,
+    .section3 .tile img{
+        width: 250px;
+    }
+
+    .section4 h1 {
+        font-size: 20px;
+    }
+
+    .section4 h1:hover {
+        font-size: 23px;
+    }
+
+    .section4 img {
+        width: 250px;
+    }
+
+    .wewantyou img {
+        margin: auto;
+        width: 250px;
+    }
+    .wewantyou img:hover {
+        margin-left: auto;
+        width: 270px;
+    }
+
+    .popup-wrapper {
+       width: 300px;
+    }
+
+    .register-block,
+    .login-block {
+        width: 300px;
+    }
+
+}
