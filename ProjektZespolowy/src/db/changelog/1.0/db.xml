@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+
+
 <databaseChangeLog
 
 		xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
@@ -11,7 +13,7 @@
 			<column name="id" type="int" autoIncrement="true">
 				<constraints primaryKey="true" nullable="false"/>
 			</column>
-			<column name="product_name" type="varchar(70)" >
+			<column name="product_name"   type="varchar(70)" >
 				<constraints nullable="false"/>
 			</column>
 			<column name="proteins" type="int">
