@@ -91,7 +91,7 @@
 			<column name="id" type="int" autoIncrement="true">
 				<constraints primaryKey="true" nullable="false"/>
 			</column>
-			<column name="name" type="varchar(50)">
+			<column name="exercise_name" type="varchar(50)">
 				<constraints nullable="false"/>
 			</column>
 			<column name="id_part_description" type="int">
