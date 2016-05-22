@@ -1,0 +1,50 @@
+// URL: http://10.0.0.10:8080/api/exercise GET
+[
+  {
+    "id": 1,
+    "description": "KLATA2",
+    "bodyPart": "KLATKA",
+    "name": "KLATA2"
+  },
+  {
+    "id": 2,
+    "description": "PLECY",
+    "bodyPart": "PLECY",
+    "name": "PLECY"
+  },
+  {
+    "id": 3,
+    "description": "BICEPS",
+    "bodyPart": "BICEPS",
+    "name": "BICEPS"
+  },
+  {
+    "id": 4,
+    "description": "KLATA",
+    "bodyPart": "KLATKA",
+    "name": "KLATA"
+  }
+]
+
+// URL: http://10.0.0.10:8080/api/exercise POST mozna tez tym updatować doodajac na poczatku id
+{
+  "description": "BICEPS",
+  "bodyPart": "BICEPS",
+  "name": "BICEPS"
+}
+
+// // URL: http://10.0.0.10:8080/api/exercise/KLATKA GET
+[
+  {
+    "id": 1,
+    "description": "KLATA2",
+    "bodyPart": "KLATKA",
+    "name": "KLATA2"
+  },
+  {
+    "id": 4,
+    "description": "KLATA",
+    "bodyPart": "KLATKA",
+    "name": "KLATA"
+  }
+]
