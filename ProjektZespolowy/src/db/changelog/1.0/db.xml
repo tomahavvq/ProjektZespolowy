@@ -1,157 +1,185 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
-
 <databaseChangeLog
 
-  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+		xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
-         <changeSet id="create database" author="nowaczq">
-         	<createTable tableName = "products">
-         		<column name="id" type="int" autoIncrement="true">
-         			<constraints primaryKey="true" nullable="false"/>
-         		</column>
-         		<column name="product_name" type="varchar(70)" >
-         			<constraints nullable="false"/>
-         		</column>
-         		<column name="proteins" type="int">
-         			<constraints nullable="false"/>
-         		</column>
-         		<column name="carbonhydrates" type="int">
-         			<constraints nullable="false"/>
-         		</column>
-         		<column name="fats" type="int">
-         			<constraints nullable="false"/>
-         		</column>
-         	</createTable>
+	<changeSet id="create database" author="nowaczq">
+		<createTable tableName = "products">
+			<column name="id" type="int" autoIncrement="true">
+				<constraints primaryKey="true" nullable="false"/>
+			</column>
+			<column name="product_name"   type="varchar(70)" >
+				<constraints nullable="false"/>
+			</column>
+			<column name="proteins" type="int">
+				<constraints nullable="false"/>
+			</column>
+			<column name="carbonhydrates" type="int">
+				<constraints nullable="false"/>
+			</column>
+			<column name="fats" type="int">
+				<constraints nullable="false"/>
+			</column>
+		</createTable>
 
-         	<createTable tableName="meal" >
-         		<column name="id" type="int" autoIncrement="true">
-         			<constraints primaryKey="true" nullable="false"/>
-         		</column>
-         		<column name="meal_name" type="varchar(50)" >
-         			<constraints nullable="false"/>
-         		</column>
-         		<column name="time_of_meal" type="datetime" >
-         			<constraints nullable="false"/>
-         		</column>
-         	</createTable>
+		<createTable tableName="meal" >
+			<column name="id" type="int" autoIncrement="true">
+				<constraints primaryKey="true" nullable="false"/>
+			</column>
+			<column name="meal_name" type="varchar(50)" >
+				<constraints nullable="false"/>
+			</column>
+			<column name="time_of_meal" type="datetime" >
+				<constraints nullable="false"/>
+			</column>
+		</createTable>
 
-         	<createTable tableName="product_meal">
-         		<column name="meal_id" type="int">
-         			<constraints nullable="false" foreignKeyName="fk_productmeal_meal" references="meal(id)"/>
-         		</column>
-         		<column name="products_id" type="int">
-         			<constraints nullable="false" foreignKeyName="fk_productmeal_products" references="products(id)"/>
-         		</column>
-         	</createTable>
+		<createTable tableName="product_meal">
+			<column name="meal_id" type="int">
+				<constraints nullable="false" foreignKeyName="fk_productmeal_meal" references="meal(id)"/>
+			</column>
+			<column name="products_id" type="int">
+				<constraints nullable="false" foreignKeyName="fk_productmeal_products" references="products(id)"/>
+			</column>
+		</createTable>
 
-         	<createTable tableName="diet">
-         		<column name="id" type="int" autoIncrement="true">
-         			<constraints primaryKey="true" nullable="false"/>
-         		</column>
-         		<column name="diet_type" type="varchar(50)">
-         			<constraints nullable="false"/>
-         		</column>
-         		<column name="user_id" type="bigint" >
-         			<constraints nullable="false" foreignKeyName="fk_user_diet" references="user(id)"/>
-         		</column>
-         		<column name="calories_index" type="int">
-         			<constraints nullable="false"/>
-         		</column>
-         		<column name="proteins_index" type="int">
-         			<constraints nullable="false"/>
-         		</column>
-         		<column name="fats_index" type="int">
-         			<constraints nullable="false"/>
-         		</column>
-         	</createTable>
+		<createTable tableName="diet">
+			<column name="id" type="int" autoIncrement="true">
+				<constraints primaryKey="true" nullable="false"/>
+			</column>
+			<column name="diet_type" type="varchar(50)">
+				<constraints nullable="false"/>
+			</column>
+			<column name="user_id" type="bigint" >
+				<constraints nullable="false" foreignKeyName="fk_user_diet" references="user(id)"/>
+			</column>
+			<column name="calories_index" type="int">
+				<constraints nullable="false"/>
+			</column>
+			<column name="proteins_index" type="int">
+				<constraints nullable="false"/>
+			</column>
+			<column name="fats_index" type="int">
+				<constraints nullable="false"/>
+			</column>
+		</createTable>
 
-         	<createTable tableName="diet_meal">
-         		<column name="meal_id" type="int">
-         			<constraints nullable="false" foreignKeyName="fk_dietmeal_meal" references="meal(id)"/>
-         		</column>
-         		<column name="diet_id" type="int">
-         			<constraints nullable="false" foreignKeyName="fk_dietmeal_products" references="diet(id)"/>
-         		</column>
-         	</createTable>
+		<createTable tableName="diet_meal">
+			<column name="meal_id" type="int">
+				<constraints nullable="false" foreignKeyName="fk_dietmeal_meal" references="meal(id)"/>
+			</column>
+			<column name="diet_id" type="int">
+				<constraints nullable="false" foreignKeyName="fk_dietmeal_products" references="diet(id)"/>
+			</column>
+		</createTable>
 
-			 <createTable tableName="gym">
-				 <column name="id" type="int" autoIncrement="true">
-					 <constraints primaryKey="true" nullable="false"/>
-				 </column>
-				 <column name="name" type="varchar(100)">
-					 <constraints nullable="false"/>
-				 </column>
-				 <column name="street" type="varchar(100)">
-					 <constraints nullable="false"/>
-				 </column>
-				 <column name="building_number" type="int">
-					 <constraints nullable="false"/>
-				 </column>
-				 <column name="city" type="varchar(100)">
-					 <constraints nullable="false"/>
-				 </column>
-			 </createTable>
+		<createTable tableName="body_part">
+			<column name="id" type="int" autoIncrement="true">
+				<constraints primaryKey="true" nullable="false"/>
+			</column>
+			<column name="description" type="varchar(1000)">
+				<constraints nullable="false"/>
+			</column>
+		</createTable>
 
-         	<createTable tableName="training">
-         		<column name="id" type="int" autoIncrement="true">
-         			<constraints primaryKey="true" nullable="false"/>
-         		</column>
-         		<column name="user_id" type="bigint" >
-         			<constraints nullable="false" foreignKeyName="fk_user_training" references="user(id)"/>
-         		</column>
-         		<column name="time" type="time">
-         			<constraints nullable="false"/>
-         		</column>
-         		<column name="date" type="datetime">
-         			<constraints nullable="false"/>
-         		</column>
-         		<column name="gym_id" type="int" >
-         			<constraints nullable="false" foreignKeyName="fk_gym_training" references="gym(id)"/>
-         		</column>
-         		<column name="burned_calories" type="int">
-         			<constraints nullable="false"/>
-         		</column>
-         	</createTable>
+		<createTable tableName="exercise">
+			<column name="id" type="int" autoIncrement="true">
+				<constraints primaryKey="true" nullable="false"/>
+			</column>
+			<column name="name" type="varchar(50)">
+				<constraints nullable="false"/>
+			</column>
+			<column name="id_part_description" type="int">
+				<constraints nullable="false" foreignKeyName="fk_partdescription" references="body_part(id)" />
+			</column>
+			<column name="description" type="varchar(1000)">
+				<constraints nullable="false"/>
+			</column>
+		</createTable>
 
-         	<createTable tableName="excercise">
-         		<column name="id" type="int" autoIncrement="true">
-         			<constraints primaryKey="true" nullable="false"/>
-         		</column>
-         		<column name="name" type="varchar(50)">
-         			<constraints nullable="false"/>
-         		</column>
-         		<column name="distance" type="int" />
-         		<column name="load" type="int"/>
-         		<column name="burned_calories" type="int">
-         			<constraints nullable="false"/>
-         		</column>
-         	</createTable>
+		<createTable tableName="exercise_details">
+			<column name="id" type="int" autoIncrement="true">
+				<constraints primaryKey="true" nullable="false"/>
+			</column>
+			<column name="id_exercise" type="int">
+				<constraints nullable="false" foreignKeyName="fk_exercise" references="exercise(id)" />
+			</column>
+			<column name="repeat" type="int">
+				<constraints nullable="false"/>
+			</column>
+			<column name="series" type="int">
+				<constraints nullable="false"/>
+			</column>
+			<column name="weight" type="int">
+				<constraints nullable="false"/>
+			</column>
+			<column name="is_done" type="boolean">
+				<constraints nullable="false"/>
+			</column>
+		</createTable>
 
-         	<createTable tableName="excercise_training">
-         		<column name="training_id" type="int">
-         			<constraints nullable="false" foreignKeyName="fk_excercisetraining_training" references="training(id)"/>
-         		</column>
-         		<column name="excercise_id" type="int">
-         			<constraints nullable="false" foreignKeyName="fk_excercisetraining_excercise" references="excercise(id)"/>
-         		</column>
-         	</createTable>
+		<createTable tableName="training">
+			<column name="id" type="int" autoIncrement="true">
+				<constraints primaryKey="true" nullable="false"/>
+			</column>
+			<column name="user_id" type="bigint" >
+				<constraints nullable="false" foreignKeyName="fk_user_training" references="user(id)"/>
+			</column>
+			<column name="time" type="time">
+				<constraints nullable="false"/>
+			</column>
+			<column name="date" type="datetime">
+				<constraints nullable="false"/>
+			</column>
+			<column name="is_done" type="boolean">
+				<constraints nullable="false"/>
+			</column>
+			<column name="is_strength" type="boolean">
+				<constraints nullable="false"/>
+			</column>
+		</createTable>
 
-		<createTable tableName="load">
-         		<column name="id" type="int" autoIncrement="true">
-         			<constraints primaryKey="true" nullable="false"/>
-         		</column>
-         		<column name="repetition_amount" type="int">
-         			<constraints nullable="false"/>
-         		</column>
-         		<column name="series_amount" type="int">
-         			<constraints nullable="false"/>
-         		</column>
-         	</createTable>
+		<createTable tableName="training_exercise">
+			<column name="exercise_id" type="int">
+				<constraints nullable="false" foreignKeyName="fk_trainingexercise_excercise" references="exercise_details(id)"/>
+			</column>
+			<column name="training_id" type="int">
+				<constraints nullable="false" foreignKeyName="fk_trainingexercise_training" references="training(id)"/>
+			</column>
+		</createTable>
 
-         </changeSet>
+
+		<createTable tableName="cardio_details">
+			<column name="id" type="int" autoIncrement="true">
+				<constraints primaryKey="true" nullable="false"/>
+			</column>
+			<column name="distance" type="int">
+				<constraints nullable="false"/>
+			</column>
+			<column name="id_training" type="int">
+				<constraints nullable="false" foreignKeyName="fk_training" references="training(id)"/>
+			</column>
+		</createTable>
+
+		<createTable tableName="coordinates">
+			<column name="id" type="int" autoIncrement="true">
+				<constraints nullable="false" primaryKey="true"/>
+			</column>
+			<column name="id_cardio" type="int">
+				<constraints nullable="false" foreignKeyName="fk_cardiodescription" references="cardio_details(id)"/>
+			</column>
+			<column name="latitude" type="varchar(50)">
+					<constraints nullable="false"/>
+				</column>
+			<column name="longitude" type="varchar(50)">
+				<constraints nullable="false"/>
+			</column>
+		</createTable>
+
+
+	</changeSet>
 
 </databaseChangeLog>
