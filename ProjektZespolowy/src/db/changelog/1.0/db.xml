@@ -14,16 +14,24 @@
 			<column name="product_name"   type="varchar(70)" >
 				<constraints nullable="false"/>
 			</column>
-			<column name="proteins" type="int">
+			<column name="kcal" type="int">
 				<constraints nullable="false"/>
 			</column>
-			<column name="carbonhydrates" type="int">
+			<column name="carbonhydrates" type="float">
 				<constraints nullable="false"/>
 			</column>
-			<column name="fats" type="int">
+			<column name="proteins" type="float">
+				<constraints nullable="false"/>
+			</column>
+			<column name="fats" type="float">
 				<constraints nullable="false"/>
 			</column>
 		</createTable>
+
+		<loadData
+				file="/home/nowaczq/ProjektZespolowy/ProjektZespolowy/src/db/changelog/productsData.csv"
+				tableName="products"
+		/>
 
 		<createTable tableName="meal" >
 			<column name="id" type="int" autoIncrement="true">
@@ -85,11 +93,16 @@
 			</column>
 		</createTable>
 
+		<loadData
+				file="/home/nowaczq/ProjektZespolowy/ProjektZespolowy/src/db/changelog/bodypart.csv"
+				tableName="body_part"
+		/>
+
 		<createTable tableName="exercise">
 			<column name="id" type="int" autoIncrement="true">
 				<constraints primaryKey="true" nullable="false"/>
 			</column>
-			<column name="exercise_name" type="varchar(50)">
+			<column name="exercise_name" type="varchar(1000)">
 				<constraints nullable="false"/>
 			</column>
 			<column name="id_part_description" type="int">
@@ -99,6 +112,11 @@
 				<constraints nullable="false"/>
 			</column>
 		</createTable>
+
+		<loadData
+				file="/home/nowaczq/ProjektZespolowy/ProjektZespolowy/src/db/changelog/exercise.csv"
+				tableName="exercise"
+		/>
 
 		<createTable tableName="exercise_details">
 			<column name="id" type="int" autoIncrement="true">
