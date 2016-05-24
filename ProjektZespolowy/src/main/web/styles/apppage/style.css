@@ -123,3 +123,7 @@ body {
     color:black;
     padding-left:3px;
 }
+
+.calc-content p{
+    text-align:center;
+}
