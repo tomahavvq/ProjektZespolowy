@@ -1,7 +1,10 @@
 package projekt.zespolowy.domain;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.io.Serializable;
+import java.sql.Date;
 import java.time.LocalDateTime;
 
 /**
@@ -14,13 +17,11 @@ public abstract class AbstractTrainingEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column
     private Integer duration;
 
-    @Column
-    private LocalDateTime dateTime;
+    @DateTimeFormat
+    private Date dateTime;
 
-    @Column
     private String name;
 
     @ManyToOne
@@ -43,11 +44,11 @@ public abstract class AbstractTrainingEntity implements Serializable {
         this.duration = duration;
     }
 
-    public LocalDateTime getDateTime() {
+    public Date getDateTime() {
         return dateTime;
     }
 
-    public void setDateTime(LocalDateTime dateTime) {
+    public void setDateTime(Date dateTime) {
         this.dateTime = dateTime;
     }
 

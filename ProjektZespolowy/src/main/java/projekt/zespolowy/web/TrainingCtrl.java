@@ -8,6 +8,7 @@ import projekt.zespolowy.service.TrainingService;
 import projekt.zespolowy.web.dto.TrainingDTO;
 
 import javax.inject.Inject;
+import java.util.List;
 
 /**
  * Created by matexo on 21.05.16.
@@ -25,24 +26,16 @@ public class TrainingCtrl {
     public ResponseEntity<TrainingDTO> getTraining(@PathVariable Long trainingId) {
         return trainingService.getTraining(trainingId)
                 .map(trainingDTO -> new ResponseEntity<>(trainingDTO, HttpStatus.OK))
-                .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
-    }
-
-
-    // w poznijeszym czasie przypisanie do usera
-    @RequestMapping(value = "" , method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<?> saveTraining(@RequestBody TrainingDTO trainingDTO)
-    {
-        return trainingService.saveTraining(trainingDTO)
-                .map(training -> new ResponseEntity<>(training.getId(), HttpStatus.OK))
                 .orElse(new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR));
     }
 
     // TODO do pomyslenia// URL: http://10.0.0.10:8080/api/exercise GET
-    @RequestMapping(value = "/{trainingId}" , method = RequestMethod.PUT , consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<?> updateTraining(@RequestBody TrainingDTO trainingDTO, @PathVariable Long id)
+    @RequestMapping(value = "/{userId}" , method = RequestMethod.PUT , consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> updateTraining(@RequestBody TrainingDTO trainingDTO, @PathVariable Long userId)
     {
-    return null;
+    return trainingService.editTraining(trainingDTO , userId)
+            .map(training -> new ResponseEntity<>(training.getId() , HttpStatus.OK ))
+            .orElse(new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR));
     }
 
     @RequestMapping(value = "/{trainingId}" , method = RequestMethod.DELETE)
@@ -50,6 +43,26 @@ public class TrainingCtrl {
     {
         return trainingService.deleteTraining(trainingId)
                 .map(training -> new ResponseEntity<>(training.getId() ,HttpStatus.OK))
+                .orElse(new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR));
+    }
+
+    @RequestMapping(value = "/{userId}" , method = RequestMethod.GET)
+    public ResponseEntity<?> getAllTrainingForUser(@PathVariable Long userId)
+    {
+        return new ResponseEntity<>(trainingService.getAllTrainingForUser(userId).get(),HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/{userId}/active" , method = RequestMethod.GET)
+    public ResponseEntity<List<TrainingDTO>> getActiveTrainingForUser(@PathVariable Long userId)
+    {
+        return new ResponseEntity<>(trainingService.getAllActiveTrainingForUser(userId).get(),HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/{userId}" , method = RequestMethod.POST)
+    public ResponseEntity<?> addTrainingForUser(@RequestBody TrainingDTO trainingDTO , @PathVariable Long userId)
+    {
+        return trainingService.saveTrainingForUser(trainingDTO , userId)
+                .map(training -> new ResponseEntity<>(training.getId() , HttpStatus.OK))
                 .orElse(new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR));
     }
 

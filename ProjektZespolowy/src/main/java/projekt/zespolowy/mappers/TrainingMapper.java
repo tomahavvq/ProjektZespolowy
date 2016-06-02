@@ -25,8 +25,9 @@ public class TrainingMapper {
         TrainingDTO trainingDTO = new TrainingDTO();
         trainingDTO.setDone(training.getDone());
         trainingDTO.setId(training.getId());
-        trainingDTO.setStrength(training.getStrength());
-        trainingDTO.setTrainingDate(training.getDate());
+        trainingDTO.setTrainingDate(training.getDateTime());
+        trainingDTO.setUserId(training.getUser().getId());
+        trainingDTO.setName(training.getName());
         return trainingDTO;
     }
 
@@ -49,6 +50,16 @@ public class TrainingMapper {
             exersiseDTOList.add(exersiseDTO);
         }
         return exersiseDTOList;
+    }
+
+    public static List<TrainingDTO> mapTrainingListToTrainingDTOList(Iterable<Training> list)
+    {
+        List<TrainingDTO> trainingDTOList = new ArrayList<>();
+        for(Training training : list)
+        {
+            trainingDTOList.add(mapTrainingEntityToDTO(training));
+        }
+        return trainingDTOList;
     }
 
 }
