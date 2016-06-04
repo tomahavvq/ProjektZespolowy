@@ -1,6 +1,7 @@
 package projekt.zespolowy.web.dto;
 
 import java.sql.Date;
+import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -11,8 +12,25 @@ public class TrainingDTO {
     private Long id;
     private Date trainingDate;
     private Boolean isDone;
-    private Boolean isStrength;
+    private String name;
     private List<ExersiseDTO> exersiseDTOList;
+    private Long userId;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
 
     public Long getId() {
         return id;
@@ -36,14 +54,6 @@ public class TrainingDTO {
 
     public void setDone(Boolean done) {
         isDone = done;
-    }
-
-    public Boolean getStrength() {
-        return isStrength;
-    }
-
-    public void setStrength(Boolean strength) {
-        isStrength = strength;
     }
 
     public List<ExersiseDTO> getExersiseDTOList() {

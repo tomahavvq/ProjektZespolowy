@@ -2,6 +2,7 @@ package projekt.zespolowy.domain.training;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.springframework.format.annotation.DateTimeFormat;
+import projekt.zespolowy.domain.AbstractTrainingEntity;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -14,47 +15,13 @@ import java.util.List;
  */
 @Entity
 @Table
-public class Training implements Serializable {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-
-    @DateTimeFormat
-    private Date training_date;
-
-    @NotNull
-    private Boolean isStrength = Boolean.TRUE;
+public class Training extends AbstractTrainingEntity{
 
     @NotNull
     private Boolean isDone = Boolean.FALSE;
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "training")
     private List<ExerciseDetails> exercises;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Date getDate() {
-        return training_date;
-    }
-
-    public void setDate(Date training_date) {
-        this.training_date = training_date;
-    }
-
-    public Boolean getStrength() {
-        return isStrength;
-    }
-
-    public void setStrength(Boolean strength) {
-        isStrength = strength;
-    }
 
     public Boolean getDone() {
         return isDone;

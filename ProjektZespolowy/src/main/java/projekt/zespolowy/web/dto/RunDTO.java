@@ -1,5 +1,6 @@
 package projekt.zespolowy.web.dto;
 
+import java.sql.Date;
 import java.time.LocalDateTime;
 
 /**
@@ -11,7 +12,7 @@ public class RunDTO {
     private Integer[] pace;
     private Double[][] coordinates;
     private Integer duration;
-    private LocalDateTime dateTime;
+    private Date dateTime;
     private String name;
     private Integer distance;
 
@@ -47,11 +48,11 @@ public class RunDTO {
         this.duration = duration;
     }
 
-    public LocalDateTime getDateTime() {
+    public Date getDateTime() {
         return dateTime;
     }
 
-    public void setDateTime(LocalDateTime dateTime) {
+    public void setDateTime(Date dateTime) {
         this.dateTime = dateTime;
     }
 
