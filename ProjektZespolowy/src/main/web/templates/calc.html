@@ -35,10 +35,11 @@
         <div class="calc-content">
         <div ng-show="calc.isChosen(1)">
             <h2>Calculate your BMI</h2>
-
+                <form>
                 <p>Height (cm): <input class="text-field" type="text" ng-model="calc.height"></p>
                 <p>Weight (kg): <input class="text-field" type="text" ng-model="calc.weight"></p>
                 <p><input class="text-field" type="submit" value="Calculate" ng-click="calc.calcBMI(calc.height, calc.weight)"></p>
+                </form>
                 <h3>Result:</h3>
                 <h3>{{calc.bmi | number:2}}</h3>
                 <h3>{{calc.comment}}</h3>
@@ -46,21 +47,24 @@
         </div>
         <div ng-show="calc.isChosen(2)">
             <h2>Calculate  daily water intake</h2>
+                <form>
                 <p>Weight (kg): <input class="text-field" type="text" ng-model="calc.weight"></p>
                 <p><input class="text-field" type="submit" value="Calculate" ng-click="calc.calcWater(calc.weight)"></p>
+                </form>
                 <h3>Result:</h3>
                 <p>{{"You have to drink " + calc.water + " ml of water per day"}}</p>
 
         </div>
         <div ng-show="calc.isChosen(3)">
             <h2>Calculate Waist-Hip ratio</h2>
+                <form>
                 <p>Gender:
                     <select class="text-field" name="singleSelect" ng-model ="calc.sex">
                         <option class="text-field" value="w">Woman</option>
                         <option class="text-field" value="m">Man</option>
                     </select>
                 </p>
-
+                </form>
                 <p>Waist (cm): <input class="text-field" type="text" ng-model="calc.waist"></p>
                 <p>Hip (cm): <input class="text-field" type="text" ng-model="calc.hip"></p>
                 <p><input class="text-field" type="submit" value="Calculate" ng-click="calc.calcWHR(calc.waist, calc.hip, calc.sex)"></p>
@@ -71,22 +75,41 @@
         </div>
         <div ng-show="calc.isChosen(4)">
             <h2>Calculate ideal weight</h2>
-            <p>Gender:
+
+            <form>
+                <p>Gender:
                 <select class="text-field" name="singleSelect" ng-model ="calc.sex">
                     <option class="text-field" value="w">Woman</option>
                     <option class="text-field" value="m">Man</option>
                 </select>
-            </p>
+                </p>
             <p>Height (cm): <input class="text-field" type="text" ng-model="calc.height"></p>
             <p><input class="text-field" type="submit" value="Calculate" ng-click="calc.calcIdeal(calc.height, calc.sex)"></p>
+            </form>
             <h3>Result:</h3>
             <p>{{"Your ideal weight equals to " + calc.idealW + " kg"}}</p>
         </div>
         <div ng-show="calc.isChosen(5)">
             <h2>Calculate daily kilocalorie requirement</h2>
+
+
         </div>
         <div ng-show="calc.isChosen(6)">
-            <h2>Calculate dailt protein requirement</h2>
+            <h2>Calculate daily            protein requirement</h2>
+            <form>
+                <p>Activity:
+
+                    <select class="text-field" name ="activitySelect" ng-model = "calc.activity">
+                        <option class ="text-field" value="1">None</option>
+                        <option class ="text-field" value="2">Daily Training</option>
+                        <option class ="text-field" value="3">Intense Training</option>
+                    </select>
+                </p>
+                <p>Weight (kg): <input class="text-field" type="text" ng-model="calc.weight"></p>
+                <p><input class="text-field" type="submit" value="Calculate" ng-click="calc.calcRecomProt(calc.activity,calc.weight)"></p>
+                <h3>Result:</h3>
+                <p>{{"You have to eat " + calc.proteins + " g of proteins per day"}}</p>
+            </form>
         </div>
         </div>
     </div>

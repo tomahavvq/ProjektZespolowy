@@ -44,6 +44,10 @@ var App = angular.module('maxApp',['ui.router']);
         this.hip = 0;
         this.sex = "";
         this.idealW = 0;
+        this.proteins = 0;
+        this.activity = "";
+
+
         this.choseCalc = function(chosen){
             this.chosen = chosen;
         };
@@ -111,6 +115,7 @@ var App = angular.module('maxApp',['ui.router']);
 
         this.calcWHR = function(waist, hip, sex) {
             this.whr = waist/hip;
+            this.checkWHR(this.whr, sex);
         };
 
         this.calcIdeal = function(height, sex){
@@ -125,8 +130,14 @@ var App = angular.module('maxApp',['ui.router']);
 
         };
 
-        this.calcRecomProt = function(){
-
+        this.calcRecomProt = function(activity, weight){
+            if(activity ==='1'){
+                this.proteins = weight*0.8;
+            }else if(activity === '2'){
+                this.proteins = weight;
+            }else if(activity === '3'){
+                this.proteins = weight*1.5;
+            }
         };
 
     });
