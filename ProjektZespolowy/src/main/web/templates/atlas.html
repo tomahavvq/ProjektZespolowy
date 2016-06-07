@@ -1,2 +1,52 @@
-<h1>Insert Atlas Here</h1>
-<p>Atlasy trelebele chujemuje</p>
+<div ng-controller="atlasController as atlas">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <nav class="navbar navbar-inverse atlas-submenu">
+                <ul class="nav navbar-nav">
+                    <li><a ng-click="getBodyPart('KLATKA')">Chest</a></li>
+                    <li><a>Back</a></li>
+                    <li><a>Legs</a></li>
+                    <li><a>Shoulders</a></li>
+                    <li><a>Arms</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row calc-content">
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 dates-list">
+                <h3>Excerises List:</h3>
+                <div class="list">
+                    <div class = "train-date" ng-repeat="exercise in exercises" ng-click="getExerciseDetail(exercise.id)">
+                        {{exercise.name}}
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                <h3>Details</h3>
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 exercise-info">
+                            <div class="exercise-block">
+                                <h4> Name: </h4>
+                                    {{currentExercise.name}}
+                            </div>
+                            <div class="exercise-block">
+                                <h4> Body part: </h4>
+                                    {{currentExercise.bodyPart}}
+                            </div>
+
+                            <div class="exercise-descript ">
+                                <h4>Description:</h4>
+                                    {{currentExercise.description}}
+                            </div>
+                    </div>
+                    <div class="col-lg-8 col-md-8  exercise-info">
+                        <h4> Image: </h4>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

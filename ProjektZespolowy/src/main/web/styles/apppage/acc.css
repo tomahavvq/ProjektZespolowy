@@ -1,0 +1,89 @@
+/*submenu */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+.calc-submenu{
+    width:75%;
+    margin:0 auto;
+    padding-right:25px;
+    margin-bottom:10px;
+}
+
+.tren-submenu{
+    width:25%;
+    margin:0 auto;
+    padding-right:25px;
+
+}
+.atlas-submenu{
+    width:29%;
+    margin:0 auto;
+    padding-right:25px;
+
+}
+
+.tren-submenu ul > li{
+   text-align:center;
+}
+
+.train-date{
+    margin-bottom:3px;
+    font-weight:bold;
+    color:black;
+    height:40px;
+    line-height:40px;
+    text-align:center;
+    background-color:rgba(255,255,255, 0.8)
+}
+
+.train-date:hover{
+    color:grey;
+    cursor:pointer;
+}
+
+.dates-list h3{
+    text-align:center;
+}
+.list{
+    overflow:scroll;
+    overflow-x:hidden;
+}
+.train-info table{
+    width:100%;
+}
+.train-info tr{
+    height:50px;
+    line-height:50px;
+}
+.train-info tr > td{
+    text-align:center;
+}
+
+.first-row {
+    background-color:rgba(0,0,0,0.4);
+
+}
+
+.exercise-info{
+    height:300px;
+}
+.exercise-block{
+    height:20%;
+    margin-left:5px;
+    margin-bottom:5px;
+}
+.exercise-descript{
+    height:60%;
+    margin-left:5px;
+    margin-bottom:5px;
+}

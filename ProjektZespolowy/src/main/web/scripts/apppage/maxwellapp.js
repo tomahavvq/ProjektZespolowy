@@ -1,4 +1,12 @@
-var App = angular.module('maxApp',['ui.router']);
+var App = angular.module('maxApp',['ui.router','ngResource']);
+    var countries = {
+    "India": "2",
+    "England": "2",
+    "Brazil": "3",
+    "UK": "1",
+    "USA": "3",
+    "Syria": "2"
+    };
 
     App.config(function($stateProvider, $urlRouterProvider){
         $urlRouterProvider.otherwise("/menu");
@@ -16,7 +24,7 @@ var App = angular.module('maxApp',['ui.router']);
             .state('tren',{
                 url:'/tren',
                 templateUrl:'templates/tren.html',
-                controller:'trainController'
+                controller:'trainingController'
             })
             .state('calc',{
                 url:'/calc',
@@ -31,6 +39,8 @@ var App = angular.module('maxApp',['ui.router']);
 
 
     });
+
+
 
     App.controller('calculatorController', function(){
         this.chosen = 1;
@@ -139,5 +149,55 @@ var App = angular.module('maxApp',['ui.router']);
                 this.proteins = weight*1.5;
             }
         };
+
+    });
+
+    //MODUŁ TRENINGU
+    App.factory('TrainingData', function($resource){
+        return $resource('http://10.0.0.10:8080/api/training/user/:user');
+    });
+
+
+    App.controller('trainingController', function($scope, TrainingData){
+        $scope.items = TrainingData.query({user:1});
+        //$scope.getTrainingInfo = function(trainID){
+        //    $scope.selected= items[trainID];
+        //    console.log(selected);
+        //}
+
+    });
+
+
+    //ATLAS ĆWICZEŃ
+
+    App.factory('ExerciseData', function($resource){
+        return $resource('http://10.0.0.10:8080/api/exercise/:bodyPart');
+    });
+
+    App.controller('atlasController', function($scope, ExerciseData){
+
+        $scope.getBodyPart = function(bodyId){
+            $scope.exercises = ExerciseData.query({bodyPart: bodyId});
+        }
+
+        $scope.getExerciseDetail = function(exerID){
+            $scope.currentExercise = ExerciseData.get({exercise: exerID});
+        }
+
+    });
+
+    //STATY
+    App.factory('StatsData', function($resource){
+        return $resource('http://jsonplaceholder.typicode.com/:part/:id');
+    });
+
+    App.controller('statsController', function($scope, StatsData){
+
+        $scope.stats = StatsData.get({part: 'users',id: '1'});
+
+
+        //$scope.getExerciseDetail = function(exerID){
+        //    $scope.currentExercise = ExerciseData.get({exercise: exerID});
+        //}
 
     });

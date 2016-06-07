@@ -1,2 +1,47 @@
-<h1>Insert Trening Here</h1>
-<p>Treningi trelebele chujemuje</p>
+<div ng-controller="trainingController as trainControl">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <nav class="navbar navbar-inverse tren-submenu">
+                <ul class="nav navbar-nav">
+                    <li><a>Create Training</a></li>
+                    <li><a>Training History</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row calc-content">
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 dates-list">
+                    <h3>Training Date</h3>
+                        <div class="list">
+                            <div class = "train-date" ng-repeat="item in items" ng-click="getTrainingInfo(item.id)">
+                                {{item.trainingDate}}
+                            </div>
+                        </div>
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                <div class="row">
+                    <h3>Details Twojej matki</h3>
+
+                        <div class="train-info">
+                            <!--<table>-->
+                                <!--<tr class="first-row">-->
+                                    <!--<td>Part</td>-->
+                                    <!--<td>Excercise name</td>-->
+                                    <!--<td>Series</td>-->
+                                    <!--<td>Repeatation</td>-->
+                                    <!--<td>Weight</td>-->
+                                <!--</tr>-->
+                                <!--<tr>-->
+                                    <!--&lt;!&ndash;<td ng-repeat="(varname,val) in currentTraining.address">{{val}}</td>&ndash;&gt;-->
+                                <!--</tr>-->
+                            <!--</table>-->
+                            {{selected}}
+                        </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
