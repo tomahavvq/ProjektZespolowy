@@ -42,7 +42,7 @@ public class ExerciseCtrl {
         return exerciseService.getExerciseByBodyPart(bp);
     }
 
-    @RequestMapping(value = "/{exerciseId}")
+    @RequestMapping(value = "/{exerciseId}" , method = RequestMethod.GET)
     public ResponseEntity<Exercise> getExerciseById(@PathVariable Long exerciseId)
     {
         return exerciseService.getExerciseById(exerciseId)

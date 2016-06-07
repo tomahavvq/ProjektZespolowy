@@ -48,6 +48,6 @@ public class ExerciseService {
 
     public Optional<Exercise> getExerciseById(Long id)
     {
-        return Optional.of(exerciseRepository.getOne(id));
+        return Optional.of(exerciseRepository.findOne(id));
     }
 }
