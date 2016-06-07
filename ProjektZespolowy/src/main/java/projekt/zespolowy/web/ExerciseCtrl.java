@@ -9,6 +9,8 @@ import projekt.zespolowy.service.ExerciseService;
 
 import javax.inject.Inject;
 import java.util.List;
+import java.util.Optional;
+
 /**
  * Created by matexo on 21.05.16.
  */
@@ -38,6 +40,14 @@ public class ExerciseCtrl {
         // cos zrobic z wyjatkiem(najprawdopodobniej zamiana na tabele slownikowa)
         BodyPart bp = BodyPart.valueOf(bodyPart);
         return exerciseService.getExerciseByBodyPart(bp);
+    }
+
+    @RequestMapping(value = "/{exerciseId}")
+    public ResponseEntity<Exercise> getExerciseById(@PathVariable Long exerciseId)
+    {
+        return exerciseService.getExerciseById(exerciseId)
+                .map(exercise -> new ResponseEntity<>(exercise , HttpStatus.OK))
+                .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
 }

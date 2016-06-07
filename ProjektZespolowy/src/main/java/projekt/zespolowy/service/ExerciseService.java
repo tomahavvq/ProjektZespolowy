@@ -45,4 +45,9 @@ public class ExerciseService {
             exerciseRepository.delete(id);
         }
     }
+
+    public Optional<Exercise> getExerciseById(Long id)
+    {
+        return Optional.of(exerciseRepository.getOne(id));
+    }
 }
