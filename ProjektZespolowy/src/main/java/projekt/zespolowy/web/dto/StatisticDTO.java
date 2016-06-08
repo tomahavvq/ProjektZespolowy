@@ -4,36 +4,54 @@ package projekt.zespolowy.web.dto;
  * Created by pysiek on 08.06.16.
  */
 public class StatisticDTO {
-    private Integer numberOfRepetitions;
-    private Integer numberOfSeries;
-    private Integer numberOfWeight;
+    private Long userId;
+    private Integer sumOfRepetitions;
+    private Integer sumOfSeries;
+    private Integer sumOfWeight;
     private Integer runDistance;
     private Integer runDuration;
-    private Integer numberOfAllDoneExercises;
-    private Integer averageRunPace;
+    private Integer sumOfAllDoneExercises;
+    private Integer sumOffAllExercises;
+    private Double averageRunPace;
 
-    public Integer getNumberOfRepetitions() {
-        return numberOfRepetitions;
+    public Long getUserId() {
+        return userId;
     }
 
-    public void setNumberOfRepetitions(Integer numberOfRepetitions) {
-        this.numberOfRepetitions = numberOfRepetitions;
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
-    public Integer getNumberOfSeries() {
-        return numberOfSeries;
+    public Integer getSumOffAllExercises() {
+        return sumOffAllExercises;
     }
 
-    public void setNumberOfSeries(Integer numberOfSeries) {
-        this.numberOfSeries = numberOfSeries;
+    public void setSumOffAllExercises(Integer sumOffAllExercises) {
+        this.sumOffAllExercises = sumOffAllExercises;
     }
 
-    public Integer getNumberOfWeight() {
-        return numberOfWeight;
+    public Integer getSumOfRepetitions() {
+        return sumOfRepetitions;
     }
 
-    public void setNumberOfWeight(Integer numberOfWeight) {
-        this.numberOfWeight = numberOfWeight;
+    public void setSumOfRepetitions(Integer sumOfRepetitions) {
+        this.sumOfRepetitions = sumOfRepetitions;
+    }
+
+    public Integer getSumOfSeries() {
+        return sumOfSeries;
+    }
+
+    public void setSumOfSeries(Integer sumOfSeries) {
+        this.sumOfSeries = sumOfSeries;
+    }
+
+    public Integer getSumOfWeight() {
+        return sumOfWeight;
+    }
+
+    public void setSumOfWeight(Integer sumOfWeight) {
+        this.sumOfWeight = sumOfWeight;
     }
 
     public Integer getRunDistance() {
@@ -52,19 +70,19 @@ public class StatisticDTO {
         this.runDuration = runDuration;
     }
 
-    public Integer getNumberOfAllDoneExercises() {
-        return numberOfAllDoneExercises;
+    public Integer getSumOfAllDoneExercises() {
+        return sumOfAllDoneExercises;
     }
 
-    public void setNumberOfAllDoneExercises(Integer numberOfAllDoneExercises) {
-        this.numberOfAllDoneExercises = numberOfAllDoneExercises;
+    public void setSumOfAllDoneExercises(Integer sumOfAllDoneExercises) {
+        this.sumOfAllDoneExercises = sumOfAllDoneExercises;
     }
 
-    public Integer getAverageRunPace() {
+    public Double getAverageRunPace() {
         return averageRunPace;
     }
 
-    public void setAverageRunPace(Integer averageRunPace) {
+    public void setAverageRunPace(Double averageRunPace) {
         this.averageRunPace = averageRunPace;
     }
 }
