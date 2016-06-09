@@ -1,5 +1,9 @@
 package projekt.zespolowy.web.dto;
 
+import projekt.zespolowy.domain.training.Exercise;
+
+import java.util.Map;
+
 /**
  * Created by pysiek on 08.06.16.
  */
@@ -10,8 +14,8 @@ public class StatisticDTO {
     private Integer sumOfWeight;
     private Integer runDistance;
     private Integer runDuration;
-    private Integer sumOfAllDoneExercises;
-    private Integer sumOffAllExercises;
+    private Map<Exercise, Integer> sumOfAllDoneExercises;
+    private Map<Exercise, Integer> sumOfAllExercises;
     private Double averageRunPace;
 
     public Long getUserId() {
@@ -22,12 +26,12 @@ public class StatisticDTO {
         this.userId = userId;
     }
 
-    public Integer getSumOffAllExercises() {
-        return sumOffAllExercises;
+    public Map<Exercise, Integer> getSumOfAllExercises() {
+        return sumOfAllExercises;
     }
 
-    public void setSumOffAllExercises(Integer sumOffAllExercises) {
-        this.sumOffAllExercises = sumOffAllExercises;
+    public void setSumOfAllExercises(Map<Exercise, Integer> sumOfAllExercises) {
+        this.sumOfAllExercises = sumOfAllExercises;
     }
 
     public Integer getSumOfRepetitions() {
@@ -70,11 +74,11 @@ public class StatisticDTO {
         this.runDuration = runDuration;
     }
 
-    public Integer getSumOfAllDoneExercises() {
+    public Map<Exercise, Integer> getSumOfAllDoneExercises() {
         return sumOfAllDoneExercises;
     }
 
-    public void setSumOfAllDoneExercises(Integer sumOfAllDoneExercises) {
+    public void setSumOfAllDoneExercises(Map<Exercise, Integer> sumOfAllDoneExercises) {
         this.sumOfAllDoneExercises = sumOfAllDoneExercises;
     }
 
