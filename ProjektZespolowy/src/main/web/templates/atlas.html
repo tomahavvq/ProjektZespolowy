@@ -18,31 +18,30 @@
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 dates-list">
                 <h3>Excerises List:</h3>
                 <div class="list">
-                    <div class = "train-date" ng-repeat="exercise in exercises" ng-click="getExerciseDetail(exercise.id)">
+                    <div class = "train-date" ng-repeat="exercise in exercises" ng-click="getExerciseDetail(exercises.indexOf(exercise))">
                         {{exercise.name}}
                     </div>
                 </div>
             </div>
             <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
                 <h3>Details</h3>
-                <div class="row">
-                    <div class="col-lg-4 col-md-4 exercise-info">
-                            <div class="exercise-block">
+                <div class="row atlas-exercise">
+                    <div class="col-lg-4 col-md-4">
+                            <div class="atlas-block">
                                 <h4> Name: </h4>
                                     {{currentExercise.name}}
-                            </div>
-                            <div class="exercise-block">
                                 <h4> Body part: </h4>
                                     {{currentExercise.bodyPart}}
                             </div>
 
-                            <div class="exercise-descript ">
+                            <div class="atlas-descript">
                                 <h4>Description:</h4>
                                     {{currentExercise.description}}
                             </div>
                     </div>
-                    <div class="col-lg-8 col-md-8  exercise-info">
+                    <div class="col-lg-8 col-md-8 atlas-img">
                         <h4> Image: </h4>
+                            <img src="{{'../images/atlas/'+currentExercise.id + '.jpg'}}">
                     </div>
                 </div>
 

@@ -15,7 +15,9 @@ body {
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
     padding-top: 75px;
 }
-
+a:hover{
+    cursor:pointer;
+}
 .section {
     color: black;
     padding: 15px 0;

@@ -14,32 +14,52 @@
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 dates-list">
                     <h3>Training Date</h3>
                         <div class="list">
-                            <div class = "train-date" ng-repeat="item in items" ng-click="getTrainingInfo(item.id)">
+                            <div class = "train-date" ng-repeat="item in items" ng-click="getTrainingInfo(items.indexOf(item))">
                                 {{item.trainingDate}}
                             </div>
                         </div>
             </div>
             <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
-                <div class="row">
-                    <h3>Details Twojej matki</h3>
-
-                        <div class="train-info">
-                            <!--<table>-->
-                                <!--<tr class="first-row">-->
-                                    <!--<td>Part</td>-->
-                                    <!--<td>Excercise name</td>-->
-                                    <!--<td>Series</td>-->
-                                    <!--<td>Repeatation</td>-->
-                                    <!--<td>Weight</td>-->
-                                <!--</tr>-->
-                                <!--<tr>-->
-                                    <!--&lt;!&ndash;<td ng-repeat="(varname,val) in currentTraining.address">{{val}}</td>&ndash;&gt;-->
-                                <!--</tr>-->
-                            <!--</table>-->
-                            {{selected}}
+                <div class="row ">
+                    <h3>Details</h3>
+                    <div class="exercise-info">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs=4">
+                            <p>Date: {{selected.trainingDate}}</p>
                         </div>
-
-
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs=4">
+                            <p>Done: {{selected.done}}</p>
+                        </div>
+                    </div>
+                </div>
+                <h3>Exercises:</h3>
+                <!--<div class="row exercise-block">-->
+                <div class="row exercise-block" ng-repeat="detail in selected.exersiseDTOList">
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                        <div ng-if="detail.done == false" class="warunek">
+                                <img src="../images/not.png">
+                                <p style="color:#000000;">Omitted</p>
+                        </div>
+                        <div ng-if="detail.done == true" class="warunek">
+                                <img src="../images/yes.png">
+                                <p style="color:#00d600;">Done</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 ">
+                        <h5>{{detail.bodyPart}}</h5>
+                        <h4>{{detail.name}}</h4>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 detail">
+                        <h4>Series:</h4>
+                        {{detail.series}}
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 detail">
+                        <h4>Repeatation:</h4>
+                        {{detail.repeatation}}
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 detail">
+                        <h4>Weight:</h4>
+                        {{detail.weight}}
+                    </div>
                 </div>
             </div>
         </div>

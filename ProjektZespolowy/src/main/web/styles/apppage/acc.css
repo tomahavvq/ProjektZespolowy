@@ -13,7 +13,7 @@
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
 }
 .calc-submenu{
-    width:75%;
+    width:80%;
     margin:0 auto;
     padding-right:25px;
     margin-bottom:10px;
@@ -75,15 +75,53 @@
 }
 
 .exercise-info{
-    height:300px;
+    height:50px;
+    background-color:rgba(0,0,0,0.5);
+    margin-bottom:5px;
+    line-height:50px;
+}
+
+.exercise-info p{
+    font-size:20px;
+    margin-left:10%;
 }
 .exercise-block{
     height:20%;
-    margin-left:5px;
+    background-color:rgba(0,0,0,0.3);
     margin-bottom:5px;
 }
 .exercise-descript{
     height:60%;
     margin-left:5px;
     margin-bottom:5px;
+}
+.warunek{
+    padding-top:15px;
+    text-align:center;
+}
+.warunek img{
+    margin-left:5%;
+    width:100%;
+}
+.detail{
+    text-align:center;
+}
+.atlas-exercise{
+    height:400px;
+    padding:20px;
+    background-color: rgba(255,255,255,0.5);
+
+}
+.atlas-img{
+    height:100%;
+    background-color: rgba(0,0,0,0.5)
+}
+
+.atlas-block{
+    color:black;
+    height:40%;
+}
+.atlas-descript{
+    color:black;
+    height:60%;
 }
