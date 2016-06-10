@@ -41,6 +41,13 @@ public class StatisticService {
         statistics.setRunDistance(0);
         statistics.setRunDuration(0);
 
+        getTrainingStatistics(statistics);
+        getRunStatistics(statistics);
+
+        return statistics;
+    }
+
+    private void getTrainingStatistics(StatisticDTO statistics) {
         Map<Exercise, Integer> done, all;
         done = new HashMap<>();
         all = new HashMap<>();
@@ -51,12 +58,14 @@ public class StatisticService {
             all.put(exercise, 0);
         }
 
-        Iterable<Training> trainings = trainingRepository.findAll(QTraining.training.user.id.eq(userId));
+        Iterable<Training> trainings = trainingRepository.findAll(
+                QTraining.training.user.id.eq(statistics.getUserId()));
         for (Training training : trainings) {
             for (ExerciseDetails exerciseDetails : training.getExercises()) {
                 if (exerciseDetails.getDone()) {
                     done.put(exerciseDetails.getExercise(), done.get(exerciseDetails.getExercise()) + 1);
-                    statistics.setSumOfRepetitions(statistics.getSumOfRepetitions() + exerciseDetails.getRepeatation());
+                    statistics.setSumOfRepetitions(
+                            statistics.getSumOfRepetitions() + exerciseDetails.getRepeatation());
                     statistics.setSumOfSeries(statistics.getSumOfSeries() + exerciseDetails.getSeries());
                     statistics.setSumOfWeight(statistics.getSumOfWeight() + exerciseDetails.getWeight());
                 }
@@ -66,14 +75,14 @@ public class StatisticService {
 
         statistics.setSumOfAllDoneExercises(done);
         statistics.setSumOfAllExercises(all);
+    }
 
-        Iterable<Run> runs = runRepository.findAll(QRun.run.user.id.eq(userId));
+    private void getRunStatistics(StatisticDTO statistics) {
+        Iterable<Run> runs = runRepository.findAll(QRun.run.user.id.eq(statistics.getUserId()));
         for (Run run : runs) {
             statistics.setRunDistance(statistics.getRunDistance() + run.getDistance());
             statistics.setRunDuration(statistics.getRunDuration() + run.getDuration());
             // TODO Statistics average run pace
         }
-
-        return statistics;
     }
 }
