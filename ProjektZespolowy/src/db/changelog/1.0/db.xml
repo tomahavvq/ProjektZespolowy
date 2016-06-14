@@ -31,7 +31,7 @@
 		</createTable>
 
 		<loadData
-				file="/home/nowaczq/ProjektZespolowy/ProjektZespolowy/src/db/changelog/productsData.csv"
+				file="./src/db/changelog/productsData.csv"
 				tableName="products"
 		/>
 
@@ -96,7 +96,7 @@
 		</createTable>
 
 		<loadData
-				file="/home/nowaczq/ProjektZespolowy/ProjektZespolowy/src/db/changelog/bodypart.csv"
+				file="./src/db/changelog/bodypart.csv"
 				tableName="body_part"
 		/>
 
@@ -116,7 +116,7 @@
 		</createTable>
 
 		<loadData
-				file="/home/nowaczq/ProjektZespolowy/ProjektZespolowy/src/db/changelog/exercise.csv"
+				file="./src/db/changelog/exercise.csv"
 				tableName="exercise"
 		/>
 
@@ -196,6 +196,33 @@
 				</column>
 			<column name="longitude" type="varchar(50)">
 				<constraints nullable="false"/>
+			</column>
+		</createTable>
+
+		<createTable tableName="run">
+			<column name="id" type="bigint" autoIncrement="true">
+				<constraints nullable="false" primaryKey="true"/>
+			</column>
+			<column name="pace" type="int">
+				<constraints nullable="false"/>
+			</column>
+			<column name="coordinates" type="int">
+				<constraints nullable="false"/>
+			</column>
+			<column name="duration" type="int">
+				<constraints nullable="false"/>
+			</column>
+			<column name="date" type="datetime">
+				<constraints nullable="false"/>
+			</column>
+			<column name="name" type="varchar(50)">
+				<constraints nullable="false"/>
+			</column>
+			<column name="distance" type="int">
+				<constraints nullable="false"/>
+			</column>
+			<column name="user_id" type="bigint" >
+				<constraints nullable="false" foreignKeyName="fk_user_run" references="user(id)"/>
 			</column>
 		</createTable>
 
