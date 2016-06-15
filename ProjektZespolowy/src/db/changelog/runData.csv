@@ -1,0 +1,5 @@
+pace,coordinates,duration,date,name,distance,user_id
+1,1,1,1970.1.1,aaa,1,1
+1,2,1,1970.1.1,aab,2,2
+2,1,1,1970.1.1,aaaa,1,2
+1,1,1,1970.1.1,aaweqaa,2,3

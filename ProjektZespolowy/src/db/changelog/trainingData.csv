@@ -1,0 +1,4 @@
+user_id,time,date,is_done,is_strength
+1,10,2000.1.1,true,false
+2,20,2000.1.1,false,false
+2,40,2000.1.1,true,false

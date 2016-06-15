@@ -21,7 +21,7 @@
             <column name="email" type="varchar(100)">
                 <constraints unique="true" nullable="false"/>
             </column>
-            <column name="activated" type="boolean" valueBoolean="false">
+            <column name="activated" type="boolean" valueBoolean="true">
                 <constraints nullable="false" />
             </column>
         </createTable>
